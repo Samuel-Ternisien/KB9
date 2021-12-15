@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    DB::table('series')->orderBy('premier','DESC')->chunk(5,function($series){
+    DB::table('series')->orderBy('premiere','DESC')->chunk(5,function($series){
         $res = [];
         foreach ($this->series as $serie){
             $res[] = $serie;
