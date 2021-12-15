@@ -18,26 +18,24 @@
 </header>
 <!-- Authentication Links -->
 <nav>
-    @section('connection')
-    <ul>
-        @guest
-            <li><a class="header-lien" href="{{ route('login') }}">Login</a></li>
-            <li><a class="header-lien" href="{{ route('register') }}">Register</a></li>
-        @else
-            <li> Bonjour {{ Auth::user()->name }}</li>
-            @if (Auth::user())
-                <li><a href="#">Des liens spécifiques pour utilisateurs connectés..</a></li>
-            @endif
-            <li><a href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                    Logout
-                </a></li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        @endguest
-    </ul>
+@section('connection')
+    @guest
+        <a class="header-lien" href="{{ route('login') }}">Login</a>
+        <a class="header-lien" href="{{ route('register') }}">Register</a>
+    @else
+            Bonjour {{ Auth::user()->name }}
+        @if (Auth::user())
+            <a href="#">Des liens spécifiques pour utilisateurs connectés..</a>
+        @endif
+        <a href="{{ route('logout') }}"
+               onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                Logout
+            </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+    @endguest
 </nav>
 <div id="main">
     @yield('content')
