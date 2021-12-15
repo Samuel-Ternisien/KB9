@@ -29,7 +29,7 @@ class SerieController extends Controller
 
     public function acceuil(){
         $series = Serie::all();
-        return view('series.index',['series'=> $series]);
+        return view('series.acceuil',['series'=> $series]);
     }
 
     public function index()
