@@ -11,10 +11,8 @@
         @foreach($series as $serie)
             <li>
                 <tr>{{$serie->id}}</tr>
-                <tr>{{$serie->fabricant}}</tr>
-                <tr>{{$smartphone->systeme}} </tr>
-                <tr>{{$smartphone->connectique}}</tr>
-                <tr><a href="{{route(' smartphone.show',$smartphone->id)}}">Information compléte</a></tr>
+                <tr>{{$serie->nom}}</tr>
+                <tr>{{$serie->resume}} </tr>
             </li>
         @endforeach
     </ul>
