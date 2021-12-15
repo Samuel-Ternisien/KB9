@@ -5,7 +5,6 @@
     <title>Liste de série</title>
 </head>
 <body>
-<h2>Liste des séries disponibles</h2>
 @if(!empty($series))
     <ul>
         @foreach($series as $serie)
@@ -13,6 +12,7 @@
                 <tr>
                     <a href="#">
                     <img src="{{$serie->urlImage}}" alt="{{$serie->nom}}">
+                        <button class="btn btn-default btn-rounded btn-condensed btn-sm pull-right" data-toggle="modal" data-target="#addModal"><span class="fa fa-pencil"></span></button>
                     </a>
                 </tr>
             </li>
