@@ -10,19 +10,15 @@
 <div>
     {{--Serie vu --}}
     <p><strong> Séries vues</strong>
-    @if(!empty($vu))
         <ul>
             @foreach($user->seen() as $vu)
                 <li>
                     <tr>{{$v->id}}</tr>
                     <tr>{{$v->nom}}</tr>
-                    <tr>{!!  $v->resume !!} </tr>
+                    <tr>{!!$v->resume!!} </tr>
                 </li>
             @endforeach
         </ul>
-    @else
-        <h3>aucune série</h3>
-        @endif</p>
 </div>
 
 {{--
