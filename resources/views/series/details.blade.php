@@ -16,7 +16,7 @@
         </li>
     </ul>
 @else
-    <h3>aucune série</h3>
+    <h3>Série non trouvé</h3>
 @endif
 </body>
 </html>

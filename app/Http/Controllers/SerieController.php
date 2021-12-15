@@ -66,11 +66,14 @@ class SerieController extends Controller
     }
 
     public function serie($id) {
+        $series = [];
         foreach (Serie::all() as $serie) {
             if ($serie->id == $id) {
-                return view("series.details", ['series' => $serie]);
+                $series[] = $serie;
+                return view("series.details", ['series' => $series]);
             }
         }
+        return view("series.details", ['series' => $series]);
     }
     /**
      * Show the form for editing the specified resource.
