@@ -109,6 +109,6 @@ class SerieController extends Controller
                 }
             }
         }
-        return view('series.index', ['series' => $series]);
+        return view('series.index', ['series' => "test"]);
     }
 }
