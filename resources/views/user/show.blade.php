@@ -7,8 +7,9 @@
     {{-- Email  --}}
     <p><strong>E-mail: </strong>{{$user->email}}</p>
 </div>
-<div>
-    {{--Serie vu --}}
+
+    {{--Serie vu
+    <div>
     <p><strong> Séries vues</strong>
         <ul>
             {{$vu=$user->seen()}}
@@ -16,6 +17,7 @@
 
         </ul>
 </div>
+--}}
 
 {{--
 <div>
