@@ -20,7 +20,7 @@ class UserController extends Controller
         $lst=[];
         foreach ($user->seen as $el){
             if (!(in_array($el,$lst))){
-                $lst[]=$el;
+                $lst[]=Serie::find($el->serie_id);
             }
         }
 
