@@ -7,7 +7,7 @@
     {{-- Email  --}}
     <p><strong>E-mail: </strong>{{$user->email}}</p>
 </div>
-{{$user->nbSeries()}}
+{{$user->nbSeenSeries()}}
 <div>
     {{--Serie vu
     <p><strong> Séries vues</strong>
