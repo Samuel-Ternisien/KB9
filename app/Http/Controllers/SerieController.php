@@ -101,16 +101,14 @@ class SerieController extends Controller
         $genre = $request->get("genre", '');
         $series = [];
         if (empty($genre)) {
-
+            return view('taches.index', ['taches' => "t"]);
         } else {
             foreach ($this->series as $serie) {
-                if ($serie->genre == $genre) {
+                if ($serie->categorie == $genre) {
                     $series[] = $serie;
                 }
             }
         }
-
-
-        return view('series.index',['series'=> $series]);
+        return view('serie.index', ['series' => $series]);
     }
 }
