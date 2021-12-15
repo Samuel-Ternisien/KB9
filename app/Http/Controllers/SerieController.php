@@ -35,7 +35,7 @@ class SerieController extends Controller
             $view[] = $res[$i];
         }
 
-        return view('series.welcome',['series'=> $view]);
+        return view('welcome',['series'=> $view]);
 
     }
 
