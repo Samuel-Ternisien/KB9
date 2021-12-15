@@ -70,9 +70,10 @@ class SerieController extends Controller
         foreach (Serie::all() as $serie) {
             if ($serie->id == $id) {
                 $series[] = $serie;
-                $episode = DB::table('episodes')->where('serie_id', '=', $id)->count();
-                $saison = DB::table('episodes')->select('saison')->where('serie_id', '=', $id)->max();
-                return view("series.details", ['series' => $series, "episode" => $episode, "saison" => $saison]);
+                $episode_nb = DB::table('episodes')->where('serie_id', '=', $id)->count();
+                $saison_nb = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
+                $episode[] = DB::table('episodes')->select('nom')->where('serie_id', '=', $id)->get();
+                return view("series.details", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, "episode" => $episode]);
             }
         }
         return view("series.details", ['series' => $series]);
