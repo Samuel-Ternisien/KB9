@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::resource('series', '\App\Http\Controllers\SerieController');
 Route::get('/series/filtre', [\App\Http\Controllers\TacheController::class, 'filtre']);
+Route::resource('series', '\App\Http\Controllers\SerieController');
+
 
 Route::get('user/{id}',[\App\Http\Controllers\UserController::class,'show']);
 //Route::post("/login", );
