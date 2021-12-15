@@ -98,33 +98,36 @@ class SerieController extends Controller
     }
 
     public function filtre(Request $request) {
-        $genre = $request->get("genre", '');
-        $series = [];
-        if (empty($genre)) {
-            $series = $this->series;
-        } else {
-            foreach (Serie::all() as $serie) {
-                if ($serie->genre == $genre) {
-                    $series[] = $serie;
-                }
-            }
-        }
-        return view('series.filtre', ['series' => $series]);
-    }
-
-    public function filtre_nom(Request $request) {
         $nom = $request->get("nom", '');
-        $series = [];
-        if (empty($nom)) {
-            $series = $this->series;
-        } else {
-            foreach (Serie::all() as $serie) {
-                if (str_contains($serie->nom, $nom)) {
-                    $series[] = $serie;
+        $genre = $request->get("genre", '');
+        if($nom){
+            $series = [];
+            if (empty($nom)) {
+                $series = $this->series;
+            } else {
+                foreach (Serie::all() as $serie) {
+                    if (str_contains($serie->nom, $nom)) {
+                        $series[] = $serie;
+                    }
                 }
             }
+            return view('series.filtre', ['series' => $series]);
         }
-        return view('series.filtre', ['series' => $series]);
+        if($genre){
+            $series = [];
+            if (empty($genre)) {
+                $series = $this->series;
+            } else {
+                foreach (Serie::all() as $serie) {
+                    if ($serie->genre == $genre) {
+                        $series[] = $serie;
+                    }
+                }
+            }
+            return view('series.filtre', ['series' => $series]);
+        }
+
+
     }
 
 }
