@@ -106,6 +106,6 @@ class SerieController extends Controller
                 }
             }
         }
-        return view('welcome',['series'=> $series]);
+        return view('series.index',['series'=> $series]);
     }
 }
