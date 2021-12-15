@@ -8,7 +8,7 @@
 @if(!empty($series))
     @foreach($series as $serie)
         <a href="#">
-            <img src="{{$serie->urlImage}}" alt="{{$serie->nom}}">
+            <img src="../{{$serie->urlImage}}" alt="{{$serie->nom}}">
         </a>
     @endforeach
 @else
