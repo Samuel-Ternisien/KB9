@@ -26,7 +26,7 @@
             @foreach($episode as $episodes)
                 <li>
                     <tr>
-                        Episode {{$episodes}}
+                        Episode {{$episodes->nom}}
                     </tr>
                 </li>
             </ul>
