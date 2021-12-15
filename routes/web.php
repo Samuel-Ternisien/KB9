@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('series.welcome', [\App\Http\Controllers\SerieController::class, 'index']);
-
-});
+Route::get('/', [\App\Http\Controllers\SerieController::class, 'index']);
 Route::get('/series/filtre', [\App\Http\Controllers\SerieController::class, 'filtre']);
 Route::resource('series', '\App\Http\Controllers\SerieController');
 
