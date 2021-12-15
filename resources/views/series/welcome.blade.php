@@ -1,19 +1,11 @@
-@extends('layouts.app')
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Acceuil</title>
+    <title>Liste de série</title>
 </head>
 <body>
-<h2>KB9</h2>
-@section('content')
-    C'est la page générale du site,
-    <br />
-    on doit y voir les dernières séries par exemple.
-@endsection
+<h2>Liste des séries disponibles</h2>
 @if(!empty($series))
     <ul>
         @foreach($series as $serie)
@@ -25,7 +17,7 @@
         @endforeach
     </ul>
 @else
-    <h3>aucune série</h3>
+    <h3>aucun smartphone</h3>
 @endif
 </body>
 </html>
