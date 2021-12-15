@@ -103,9 +103,9 @@ class SerieController extends Controller
         if (empty($genre)) {
             $series = $this->series;
         } else {
-            foreach ($this->series as $serie) {
-                if ($serie->id == $genre) {
-                    $series[] = $serie;
+            foreach ($this->series as $ssas) {
+                if ($ssas->id == $genre) {
+                    $series[] = $ssas;
                 }
             }
         }
