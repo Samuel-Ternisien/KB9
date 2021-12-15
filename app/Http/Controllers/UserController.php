@@ -17,8 +17,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $vu = User::seen();
-        return view('user.show',['user'=>$user,'vu'=>$vu]);
+        return view('user.show',['user'=>$user]);
     }
 
 }
