@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/series/filtre', [\App\Http\Controllers\TacheController::class, 'filtre']);
+Route::get('/series/filtre', [\App\Http\Controllers\SerieController::class, 'filtre']);
 Route::resource('series', '\App\Http\Controllers\SerieController');
 
 
