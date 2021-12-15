@@ -54,14 +54,7 @@ class User extends Authenticatable
             ->withPivot('date_seen');
     }
 
-    function lserie(){
-        $serie=$this->seen();
-        $lst=[];
-        foreach ($serie as $el){
-            if (!(in_array($el,$lst))){
-                $lst[]=$el;
-            }
-        }
-        return $lst;
+    function serieSeen(){
+        return DB::table('serie')->select('*')->distinct();
     }
 }
