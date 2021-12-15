@@ -23,7 +23,8 @@
 </div>
 
 
-
+{{--
 <div>
-    <a href="{{route('./')}}">Retour à la page d'accueil</a>
+    <a href="{{('./')}}">Retour à la page d'accueil</a>
 </div>
+--}}
