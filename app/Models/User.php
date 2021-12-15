@@ -53,11 +53,4 @@ class User extends Authenticatable
             ->as('when')
             ->withPivot('date_seen');
     }
-    function nbSeenSeries() {
-        $sql = "SELECT count(serie_id) FROM episode join seen on seen.episode_id=episode.id where user_id=$this->id group_by user_id";
-        $sth = DB::getPdo()->prepare($sql);
-        $sth->execute();
-        $result = $sth->fetch(\PDO::FETCH_BOTH);
-        return $result[0];
-    }
 }

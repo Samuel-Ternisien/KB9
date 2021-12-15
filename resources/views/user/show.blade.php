@@ -7,13 +7,12 @@
     {{-- Email  --}}
     <p><strong>E-mail: </strong>{{$user->email}}</p>
 </div>
-{{$user->nbSeenSeries()}}
 <div>
-    {{--Serie vu
+    {{--Serie vu --}}
     <p><strong> Séries vues</strong>
     @if(!empty($vu))
         <ul>
-            @foreach($vu as $v)
+            @foreach($user->seen() as $vu)
                 <li>
                     <tr>{{$v->id}}</tr>
                     <tr>{{$v->nom}}</tr>
@@ -25,7 +24,6 @@
         <h3>aucune série</h3>
         @endif</p>
 </div>
---}}
 
 {{--
 <div>
