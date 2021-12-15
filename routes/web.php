@@ -18,5 +18,6 @@ Route::get('/', function () {
 });
 
 Route::resource('series', '\App\Http\Controllers\SerieController');
+Route::get('/series/filtre', [\App\Http\Controllers\TacheController::class, 'filtre']);
 
 //Route::post("/login", );
