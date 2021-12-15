@@ -12,7 +12,7 @@
     <div>
     <p><strong> Séries vues</strong>
             <ul>
-                @foreach($user->lserie as $vu)
+                @foreach($user->serieSeen as $vu)
                     <li>
                         <tr>{{$vu->nom}}</tr>
                     </li>
