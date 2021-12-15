@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/series/filtre', [\App\Http\Controllers\SerieController::class, 'filtre']);
+Route::get('/series/filtre_genre', [\App\Http\Controllers\SerieController::class, 'filtre_genre']);
+Route::get('/series/filtre_nom', [\App\Http\Controllers\SerieController::class, 'filtre_nom']);
 Route::resource('series', '\App\Http\Controllers\SerieController');
 
 
