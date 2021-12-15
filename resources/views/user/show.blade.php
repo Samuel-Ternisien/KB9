@@ -7,13 +7,17 @@
     {{-- Email  --}}
     <p><strong>E-mail: </strong>{{$user->email}}</p>
 </div>
-<div>
-    {{--Serie vu --}}
+
+    {{--Serie vu
+    <div>
     <p><strong> Séries vues</strong>
         <ul>
-            {{$user->seen()->nom}}
+            {{$vu=$user->seen()}}
+        {{$vu->nom}}
+
         </ul>
 </div>
+--}}
 
 {{--
 <div>
