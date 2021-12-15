@@ -5,7 +5,7 @@
     <title>Liste de série</title>
 </head>
 <body>
-<h2>Liste des deffe disponible</h2>
+<h2>Liste des séries disponibles</h2>
 @if(!empty($series))
     <ul>
         @foreach($series as $serie)
