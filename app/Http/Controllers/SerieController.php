@@ -10,7 +10,10 @@ class SerieController extends Controller
     /**
      * @var Serie[]|\Illuminate\Database\Eloquent\Collection
      */
-    public $series;
+    /**
+     * @var Serie[]|\Illuminate\Database\Eloquent\Collection
+     */
+    private $series;
 
     /**
      * Display a listing of the resource.
