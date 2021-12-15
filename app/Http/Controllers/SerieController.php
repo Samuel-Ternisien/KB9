@@ -97,18 +97,5 @@ class SerieController extends Controller
         //
     }
 
-    public function filtre(Request $request) {
-        $genre = $request->get("genre", '');
-        $series = [];
-        if (empty($genre)) {
-            return view('series.index', ['series' => "test"]);
-        } else {
-            foreach ($this->series as $serie) {
-                if ($serie->categorie == $genre) {
-                    $series[] = $serie;
-                }
-            }
-        }
-        return view('series.index', ['series' => $series]);
-    }
+
 }
