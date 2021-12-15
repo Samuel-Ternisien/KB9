@@ -48,13 +48,10 @@ class User extends Authenticatable
         return $this-> hasMany(Comment::class);
     }
 
-    function seen() {
+    function seen()
+    {
         return $this->belongsToMany(Episode::class, 'seen')
             ->as('when')
             ->withPivot('date_seen');
-    }
-
-    function serieSeen(){
-        return DB::table('serie')->select('*')->distinct();
     }
 }
