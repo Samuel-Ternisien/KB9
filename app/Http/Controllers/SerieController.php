@@ -31,7 +31,7 @@ class SerieController extends Controller
     {
         DB::table('series')->orderBy('premiere','DESC')->chunk(5,function($series){
             $res = [];
-            foreach ($this->series as $serie){
+            foreach (Serie::all() as $serie){
                 $res[] = $serie;
             }
             return view('series.welcome',['series'=> $res]);
