@@ -106,6 +106,8 @@ class SerieController extends Controller
             foreach ($this->series as $serie) {
                 if ($serie->id == $genre) {
                     $series[] = $serie;
+                } else {
+                    echo 'non';
                 }
             }
         }
