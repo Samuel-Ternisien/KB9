@@ -22,6 +22,8 @@
         <a href="#" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
             @yield('connection')
+            <a href="#" class="header-lien" >Connexion</a>
+            <a href="#" class="header-lien" >Inscription</a>
         </div>
     </div>
 
