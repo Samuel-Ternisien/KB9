@@ -15,6 +15,10 @@
                 </a>
             </tr>
             <tr>{{$serie->nom}}</tr>
+            <tr>{{$serie->genre}}</tr>
+            <tr>{{$serie->langue}}</tr>
+            <tr>{{$serie->premiere}}</tr>
+            <tr>{{$serie->note}}</tr>
             <tr>{!!  $serie->resume !!} </tr>
         </li>
     @endforeach
