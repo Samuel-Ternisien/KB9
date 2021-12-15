@@ -15,7 +15,7 @@ class SerieController extends Controller
     public function index()
     {
         $series=Serie::all();
-        return view('series.index',['series'=> $series]);
+        return view('welcome',['series'=> $series]);
     }
     /**
      * Show the form for creating a new resource.
