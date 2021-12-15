@@ -12,7 +12,6 @@
                 <tr>
                     <a href="#">
                     <img src="{{$serie->urlImage}}" alt="{{$serie->nom}}">
-                        <button class="btn btn-default btn-rounded btn-condensed btn-sm pull-right" data-toggle="modal" data-target="#addModal"><span class="fa fa-pencil"></span></button>
                     </a>
                 </tr>
             </li>
