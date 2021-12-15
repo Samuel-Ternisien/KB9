@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\SerieController::class, 'index']);
 Route::get('/series/filtre', [\App\Http\Controllers\SerieController::class, 'filtre']);
+Route::get('/index', [\App\Http\Controllers\SerieController::class, 'index']);
 Route::resource('series', '\App\Http\Controllers\SerieController');
 
 
