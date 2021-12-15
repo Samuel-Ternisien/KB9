@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Serie;
+use Illuminate\Support\Facades\DB;
 
 class SerieController extends Controller
 {

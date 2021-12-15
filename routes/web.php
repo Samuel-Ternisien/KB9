@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-    
+    DB::table('series')->orderBy('premier','DESC')->chunk(5,function($series){
+        $res = [];
+        foreach ($this->series as $serie){
+            $res[] = $serie;
+        }
+        return view('welcome',['series'=> $res]);
+    });
+
 });
 Route::get('/series/filtre', [\App\Http\Controllers\SerieController::class, 'filtre']);
 Route::resource('series', '\App\Http\Controllers\SerieController');
