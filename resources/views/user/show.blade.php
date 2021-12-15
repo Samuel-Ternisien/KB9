@@ -8,16 +8,20 @@
     <p><strong>E-mail: </strong>{{$user->email}}</p>
 </div>
 
-    {{--Serie vu
+    {{--Serie vu--}}
     <div>
     <p><strong> Séries vues</strong>
-        <ul>
-            {{$vu=$user->seen()}}
-        {{$vu->nom}}
+            <ul>
+                @foreach($user->vu() as $vu)
+                    <li>
+                        <tr>{{$vu->episode_id}}</tr>
+                    </li>
+                @endforeach
+            </ul>
 
-        </ul>
+
 </div>
---}}
+
 
 {{--
 <div>
