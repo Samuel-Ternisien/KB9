@@ -18,10 +18,11 @@
 </header>
 <!-- Authentication Links -->
 <nav>
+    @section('connection')
     <ul>
         @guest
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
+            <li><a class="header-lien" href="{{ route('login') }}">Login</a></li>
+            <li><a class="header-lien" href="{{ route('register') }}">Register</a></li>
         @else
             <li> Bonjour {{ Auth::user()->name }}</li>
             @if (Auth::user())
