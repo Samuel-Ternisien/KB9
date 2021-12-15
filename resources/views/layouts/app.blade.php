@@ -36,7 +36,7 @@
             {{ csrf_field() }}
         </form>
     @endguest
-    @endsection
+    @endsection('connection')
 </nav>
 <div id="main">
     @yield('content')
