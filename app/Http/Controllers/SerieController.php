@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Serie;
 
@@ -27,9 +28,16 @@ class SerieController extends Controller
 
     public function index()
     {
-        $series=Serie::all();
-        return view('welcome',['series'=> $series]);
+        DB::table('series')->orderBy('premier','DESC')->chunk(5,function($series){
+            $res = [];
+            foreach ($this->series as $serie){
+                $res[] = $serie;
+            }
+            return view('welcome',['series'=> $res]);
+        });
+
     }
+
     /**
      * Show the form for creating a new resource.
      *
