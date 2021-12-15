@@ -8,10 +8,20 @@ use App\Models\Serie;
 class SerieController extends Controller
 {
     /**
+     * @var Serie[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public $series;
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function _construct(){
+        $this->series = Serie::all();
+    }
+
     public function index()
     {
         $series=Serie::all();
@@ -82,5 +92,20 @@ class SerieController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function filtre(Request $request){
+        $genre = $request->get("genre", '');
+        $series = [];
+        if (empty($genre)) {
+            $series = $this->series;
+        } else {
+            foreach ($this->series as $series) {
+                if ($series->categorie == $genre) {
+                    $series[] = $series;
+                }
+            }
+        }
+        return view('series.index',['series'=> $series]);
     }
 }
