@@ -13,7 +13,7 @@ class SerieController extends Controller
      */
     public function index()
     {
-        $series=Serie::all;
+        $series=Serie::all();
         return view('series.index',['series'=> $series]);
     }
 
