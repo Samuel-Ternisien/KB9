@@ -71,7 +71,8 @@ class SerieController extends Controller
             if ($serie->id == $id) {
                 $series[] = $serie;
                 $episode = DB::table('episodes')->where('serie_id', '=', $id)->count();
-                return view("series.details", ['series' => $series, "episode" => $episode]);
+                $saison = DB::table('episodes')->select('saison')->where('serie_id', '=', $id)->max();
+                return view("series.details", ['series' => $series, "episode" => $episode, "saison" => $saison]);
             }
         }
         return view("series.details", ['series' => $series]);

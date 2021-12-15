@@ -14,13 +14,14 @@
                     <img src="../{{$serie->urlImage}}" alt="{{$serie->nom}}">
                 </a>
             </tr>
-            <tr>{{$serie->nom}}</tr>
-            <tr>{{$serie->genre}}</tr>
-            <tr>{{$serie->langue}}</tr>
-            <tr>{{$serie->premiere}}</tr>
-            <tr>{{$serie->note}}</tr>
+            <tr>Nom : {{$serie->nom}}</tr>
+            <tr>Genre : {{$serie->genre}}</tr>
+            <tr>VO :{{$serie->langue}}</tr>
+            <tr>Date de sortie :{{$serie->premiere}}</tr>
+            <tr>Note : {{$serie->note}}</tr>
             <tr>{!!  $serie->resume !!} </tr>
-            <tr>{{$episode}}</tr>
+            <tr>Nombre d'épisodes : {{$episode}}</tr>
+            <tr>Nombre de saison : {{$saison}}</tr>
         </li>
     @endforeach
     </ul>
