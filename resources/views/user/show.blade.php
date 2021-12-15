@@ -23,8 +23,7 @@
 </div>
 
 
-{{--
+
 <div>
-    <a href="{{route('series')}}">Retour à la page d'accueil</a>
+    <a href="{{route('/')}}">Retour à la page d'accueil</a>
 </div>
---}}
