@@ -29,7 +29,7 @@ class SerieController extends Controller
 
     public function index()
     {
-        $res=DB::table('series')->orderByDesc('premiere')->get(5);
+        $res=DB::table('series')->orderByDesc('premiere')->get();
 
         return view('series.welcome',['series'=> $res]);
 
