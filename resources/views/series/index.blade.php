@@ -12,7 +12,7 @@
             <li>
                 <tr>{{$serie->id}}</tr>
                 <tr>{{$serie->nom}}</tr>
-                <tr>{{$serie->resume}} </tr>
+                <tr>{!!  $serie->resume !!} </tr>
             </li>
         @endforeach
     </ul>

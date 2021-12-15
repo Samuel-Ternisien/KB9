@@ -47,7 +47,8 @@ class SerieController extends Controller
      */
     public function show($id)
     {
-        //
+        $series=Serie::all();
+        return view('series.index',['series'=> $series]);
     }
 
     /**
