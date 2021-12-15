@@ -17,7 +17,6 @@ class SerieController extends Controller
         $series=Serie::all();
         return view('series.index',['series'=> $series]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
