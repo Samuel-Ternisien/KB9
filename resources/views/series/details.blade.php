@@ -30,6 +30,7 @@
                     </tr>
                 </li>
             </ul>
+            @endforeach
         </li>
     @endforeach
     </ul>
