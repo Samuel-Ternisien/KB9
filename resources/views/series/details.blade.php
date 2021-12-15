@@ -7,13 +7,15 @@
 <body>
 @if(!empty($series))
     <ul>
-        <li>
-            <tr>
-                <a href="#">
-                    <img src="{{$series->urlImage}}" alt="{{$series->nom}}">
-                </a>
-            </tr>
-        </li>
+        @foreach($series as $serie)
+            <li>
+                <tr>
+                    <a href="#">
+                        <img src="{{$serie->urlImage}}" alt="{{$serie->nom}}">
+                    </a>
+                </tr>
+            </li>
+        @endforeach
     </ul>
 @else
     <h3>Série non trouvé</h3>
