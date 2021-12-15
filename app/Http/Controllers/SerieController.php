@@ -103,7 +103,7 @@ class SerieController extends Controller
         if (empty($genre)) {
             $series = $this->series;
         } else {
-            foreach ($this->series as $serie) {
+            foreach (Serie::all() as $serie) {
                 if ($serie->genre == $genre) {
                     $series[] = $serie;
                 }
