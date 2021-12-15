@@ -26,7 +26,7 @@ class UserController extends Controller
                 $lst[]=Serie::find($el->serie_id);
             }
             $ep=Episode::find($el->serie_id);
-            $cpt+= $ep->duree;
+
         }
 
         return view('user.show',['user'=>$user,'seen'=>$lst,'count'=>cpt]);
