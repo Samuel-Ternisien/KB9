@@ -65,18 +65,13 @@ class SerieController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        $series=Serie::all();
-        return view('series.index',['series'=> $series]);
+    public function serie($id) {
+        foreach (Serie::all() as $serie) {
+            if ($serie->id == $id) {
+                return view("series.details", ['series' => $serie]);
+            }
+        }
     }
-
     /**
      * Show the form for editing the specified resource.
      *
