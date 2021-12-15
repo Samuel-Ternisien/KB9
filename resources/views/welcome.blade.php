@@ -33,8 +33,7 @@
 <div class="container-card">
 @if(!empty($series))
     @foreach($series as $serie)
-        <img alt="serie" src="{{$serie->urlImage}}">
-        <a class="card" id="img" href="#">
+        <a class="card" id="img" style="background-image: url({{$serie->urlImage}});" href="#">
             <h3 class="titre-film">{{$serie->nom}}</h3>
         </a>
     @endforeach
