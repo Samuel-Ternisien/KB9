@@ -14,7 +14,7 @@
             <ul>
                 @foreach($user->lserie as $vu)
                     <li>
-                        <tr>{{$vu}}</tr>
+                        <tr>{{$vu->nom}}</tr>
                     </li>
                 @endforeach
             </ul>
