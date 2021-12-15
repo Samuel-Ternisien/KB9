@@ -101,13 +101,11 @@ class SerieController extends Controller
         $genre = $request->get("genre", '');
         $series = [];
         if (empty($genre)) {
-            return view('series.filtre', ['series' => "t"]);
+            $series = $this->series;
         } else {
             foreach ($this->series as $serie) {
                 if ($serie->id == $genre) {
                     $series[] = $serie;
-                } else {
-                    echo 'non';
                 }
             }
         }
