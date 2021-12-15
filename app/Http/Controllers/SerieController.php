@@ -38,6 +38,6 @@ class SerieController extends Controller
                 }
             }
         }
-        return view('series.index', ['series' => "test"]);
+        return view('series.index', ['series' => $series]);
     }
 }
