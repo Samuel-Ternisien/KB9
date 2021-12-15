@@ -6,17 +6,11 @@
 </head>
 <body>
 @if(!empty($series))
-    <ul>
-        @foreach($series as $serie)
-            <li>
-                <tr>
-                    <a href="#">
-                        <img src="{{$serie->urlImage}}" alt="{{$serie->nom}}">
-                    </a>
-                </tr>
-            </li>
-        @endforeach
-    </ul>
+    @foreach($series as $serie)
+        <a href="#">
+            <img src="{{$serie->urlImage}}" alt="{{$serie->nom}}">
+        </a>
+    @endforeach
 @else
     <h3>Série non trouvé</h3>
 @endif
