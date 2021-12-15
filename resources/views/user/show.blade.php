@@ -11,7 +11,7 @@
     {{--Serie vu --}}
     <p><strong> Séries vues</strong>
         <ul>
-            {{$user->seen()}}
+            {{$user->seen()->nom}}
         </ul>
 </div>
 
