@@ -34,7 +34,7 @@ class SerieController extends Controller
             foreach ($this->series as $serie){
                 $res[] = $serie;
             }
-            return view('welcome',['series'=> $res]);
+            return view('series.welcome',['series'=> $res]);
         });
 
     }
