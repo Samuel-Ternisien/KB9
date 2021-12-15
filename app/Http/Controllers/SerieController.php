@@ -27,6 +27,11 @@ class SerieController extends Controller
         $this->series = Serie::all();
     }
 
+    public function list(){
+        $series = Serie::all();
+        return view(index,['series'=> $series]);
+    }
+
     public function index()
     {
         $res=DB::table('series')->orderByDesc('premiere')->get();
