@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('series.welcome');
+    return view('series.welcome', [\App\Http\Controllers\SerieController::class, 'index']);
 
 });
 Route::get('/series/filtre', [\App\Http\Controllers\SerieController::class, 'filtre']);
