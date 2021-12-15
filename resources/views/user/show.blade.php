@@ -18,9 +18,10 @@
                     </li>
                 @endforeach
             </ul>
+
     </div>
     <div>
-        <p><strong>Nombre d'heures vus: {{$count}}</strong></p>
+        <p><strong>Nombre d'heures vues: {{$count}}</strong></p>
     </div>
 
 

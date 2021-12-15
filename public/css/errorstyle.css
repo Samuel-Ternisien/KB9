@@ -1,0 +1,209 @@
+
+body{
+    margin: 0 auto;
+    background-color: #263F73;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+.header-back{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/loki.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: brightness(60%);
+    filter: grayscale(20%);
+    filter: opacity(80%) ;
+    z-index: -1;
+    
+}
+
+
+
+.header-back-shadow{
+position: absolute;
+    width: 100%;
+    height: 100vh;
+    box-shadow: inset 0 100px 100px -30px #000000;
+    z-index: -1;
+
+}
+
+
+
+
+.ins-log{
+    position: absolute;
+    right: 0;
+    top: 30px;
+    text-decoration: none;
+    width: 20%;
+    text-align: center;
+
+    }
+
+.header-lien{
+    font-size: 20px;
+    margin-right: 5%;
+    text-decoration: none;
+    color: white;
+
+}
+
+.header-lien:hover{
+    text-decoration: underline 5px #F25D27;
+
+}
+
+
+
+
+
+
+.footer-accueil{
+    padding-top: 30px;
+    padding-bottom: 20px;
+text-align: center;
+    background-color: #1c2e55;
+    color: white;
+    margin-top: 21.4vh;
+
+}
+
+
+.footer-accueil-droit{
+    margin-left: 20px;
+}
+
+
+
+
+
+@media screen and (min-width: 1000px) {
+    #logo{
+        width: 150px;
+        margin-top: 20px;
+    
+    }
+    
+    #lien-logo{
+        margin-left: 43% ;
+    
+    }
+    .footer-accueil{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    
+        background-color: #1c2e55;
+        color: white;
+        margin-top: 21.4vh;
+    
+    }
+
+.erreur{
+    display: flex;
+margin-left: 20%;}
+
+
+.erreur h1{
+    font-size: 1000%;
+    color: white;
+}
+
+.erreur img{
+    margin-left: 2%;
+    width: 20%;
+}
+
+}
+
+@media screen and (max-width: 1000px) {
+    .ins-log{
+        margin-right: 10%;
+    }
+
+      #logo{
+        width: 150px;
+        margin-top: 20px;
+    
+    }
+    
+    #lien-logo{
+        margin-right: 7% ;
+    
+    }
+    .footer-accueil{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    
+        background-color: #1c2e55;
+        color: white;
+        margin-top: 37.4vh;
+    
+    }
+
+    .erreur{
+        display: flex;
+    margin-left: 20%;}
+    
+    
+    .erreur h1{
+        font-size: 700%;
+        color: white;
+    }
+    
+    .erreur img{
+        margin-left: 2%;
+        width: 20%;
+    }
+
+
+}
+
+@media screen and (max-width: 700px) {
+    #logo{
+        width: 150px;
+        margin-top: 20px;
+    
+    }
+    
+    #lien-logo{
+        margin-right: 5% ;
+    
+    }
+    
+
+
+
+    .footer-accueil{
+        padding-top: 30px;
+        padding-bottom: 20px;
+    
+        background-color: #1c2e55;
+        color: white;
+        margin-top: 43.4vh;
+    
+    }
+    .erreur{
+        margin-top: 10vh;
+        display: flex;
+    margin-left: 10%;}
+    
+    
+    .erreur h1{
+        font-size: 350%;
+        color: white;
+    }
+    
+    .erreur img{
+        margin-left: 2%;
+        width: 20%;
+    }
+
+
+}

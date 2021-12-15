@@ -25,8 +25,7 @@ class UserController extends Controller
             if (!(in_array($el,$lst))){
                 $lst[]=Serie::find($el->serie_id);
             }
-            $ep=Episode::find($el->serie_id);
-
+            $cpt+=$el->duree;
         }
 
         return view('user.show',['user'=>$user,'seen'=>$lst,'count'=>$cpt]);
