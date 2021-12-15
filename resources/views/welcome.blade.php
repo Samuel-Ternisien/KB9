@@ -53,7 +53,6 @@
 
 </div>
 
-
 <footer class="footer-accueil">
     <div class="footer-accueil-cont" >
         <p class="footer-accueil-droit">Tout droits réservé à KB9</p>
