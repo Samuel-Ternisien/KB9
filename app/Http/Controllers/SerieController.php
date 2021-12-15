@@ -73,7 +73,7 @@ class SerieController extends Controller
                 $episode_nb = DB::table('episodes')->where('serie_id', '=', $id)->count();
                 $saison_nb = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
                 $episode[] = DB::table('episodes')->select('nom')->get();
-                return view("series.details", ['series' => $series, "episode" => $episode_nb, "saison" => $saison_nb, "episode" => $episode]);
+                return view("series.details", ['series' => $series, "episode_nb" => $episode_nb, "saison" => $saison_nb, "episode" => $episode]);
             }
         }
         return view("series.details", ['series' => $series]);
