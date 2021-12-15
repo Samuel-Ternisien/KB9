@@ -20,7 +20,7 @@ Route::get('/', function () {
         foreach (\App\Models\Serie::all() as $serie){
             $res[] = $serie;
         }
-        return view('welcome',['series'=> $res]);
+        return view('series.welcome',['series'=> $res]);
     });
 
 });
