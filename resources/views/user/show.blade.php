@@ -10,5 +10,5 @@
 
 
 <div>
-    <a href="{{route('welcome')}}">Retour à la page d'accueil</a>
+    <a href="{{route('/')}}">Retour à la page d'accueil</a>
 </div>
