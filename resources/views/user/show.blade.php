@@ -12,7 +12,7 @@
     <div>
     <p><strong> Séries vues</strong>
             <ul>
-                @foreach($user->vu() as $vu)
+                @foreach($user->seen as $vu)
                     <li>
                         <tr>{{$vu->episode_id}}</tr>
                     </li>
