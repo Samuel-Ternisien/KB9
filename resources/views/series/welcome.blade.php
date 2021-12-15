@@ -10,6 +10,7 @@
     <ul>
         @foreach($series as $serie)
             <li>
+                <img src="{{$serie->urlImage}}">
                 <tr>{{$serie->id}}</tr>
                 <tr>{{$serie->nom}}</tr>
                 <tr>{!!  $serie->resume !!} </tr>
