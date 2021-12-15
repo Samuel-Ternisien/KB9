@@ -70,9 +70,7 @@ class SerieController extends Controller
         foreach (Serie::all() as $serie) {
             if ($serie->id == $id) {
                 $series[] = $serie;
-                $episode = DB::table('episodes')
-                    ->count()
-                    ->where('serie_id', '=', $id);
+                $episode = DB::table('episodes')->count();
                 return view("series.details", ['series' => $series, "episode" => $episode]);
             }
         }
