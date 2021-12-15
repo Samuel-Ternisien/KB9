@@ -97,11 +97,11 @@ class SerieController extends Controller
     public function filtre(Request $request) {
         $genre = $request->get("genre", '');
         $series = [];
-        if (empty($cat)) {
+        if (empty($genre)) {
             $series = $this->series;
         } else {
             foreach ($this->series as $serie) {
-                if ($serie->genre == $cat) {
+                if ($serie->genre == $genre) {
                     $series[] = $serie;
                 }
             }
