@@ -101,7 +101,7 @@ class SerieController extends Controller
         $genre = $request->get("genre", '');
         $series = [];
         if (empty($genre)) {
-            $series = $this->series;
+
         } else {
             foreach ($this->series as $serie) {
                 if ($serie->genre == $genre) {
