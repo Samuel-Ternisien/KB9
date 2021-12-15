@@ -104,7 +104,7 @@ class SerieController extends Controller
             $series = $this->series;
         } else {
             foreach (Serie::all() as $serie) {
-                if ($serie->genre == $genre) {
+                if ($serie->nom.contains($genre)) {
                     $series[] = $serie;
                 }
             }
