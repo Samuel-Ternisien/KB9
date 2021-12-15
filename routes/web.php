@@ -17,6 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('series', 'SerieController');
+Route::resource('series', '\App\Http\Controllers\SerieController');
 
 //Route::post("/login", );
