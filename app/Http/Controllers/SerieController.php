@@ -10,7 +10,10 @@ class SerieController extends Controller
     /**
      * @var Serie[]|\Illuminate\Database\Eloquent\Collection
      */
-    public $series;
+    /**
+     * @var Serie[]|\Illuminate\Database\Eloquent\Collection
+     */
+    private $series;
 
     /**
      * Display a listing of the resource.
@@ -94,18 +97,20 @@ class SerieController extends Controller
         //
     }
 
-    public function filtre(Request $request){
+    public function filtre(Request $request) {
         $genre = $request->get("genre", '');
         $series = [];
         if (empty($genre)) {
             $series = $this->series;
         } else {
-            foreach ($this->series as $series) {
-                if ($series->categorie == $genre) {
-                    $series[] = $series;
+            foreach ($this->series as $serie) {
+                if ($serie->genre == $genre) {
+                    $series[] = $serie;
                 }
             }
         }
+
+
         return view('series.index',['series'=> $series]);
     }
 }
