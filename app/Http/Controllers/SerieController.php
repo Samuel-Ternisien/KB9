@@ -104,7 +104,7 @@ class SerieController extends Controller
             return view('series.index', ['series' => "t"]);
         } else {
             foreach ($this->series as $serie) {
-                if ($serie->genre == $genre) {
+                if ($serie->id == $genre) {
                     $series[] = $serie;
                 }
             }
