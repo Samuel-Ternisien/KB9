@@ -59,7 +59,7 @@ class User extends Authenticatable
         $lst=[];
         foreach ($serie as $el){
             if (!(in_array($el,$lst))){
-                $lst[]=$el;
+                $lst[]=DB::table('series')->where('nom',$el->nom)->get();
             }
         }
         return $lst;
