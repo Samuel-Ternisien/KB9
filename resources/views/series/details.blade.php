@@ -20,6 +20,7 @@
             <tr>{{$serie->premiere}}</tr>
             <tr>{{$serie->note}}</tr>
             <tr>{!!  $serie->resume !!} </tr>
+            <tr>{{$episode}}</tr>
         </li>
     @endforeach
     </ul>
