@@ -11,8 +11,7 @@
             <li>
                 <tr>
                     <a href="#">
-                        <h1>{{$serie->urlImage}}</h1>
-                        <img src="{{$serie->urlImage}}" alt="{{$serie->nom}}">
+                        <img src="./{{$serie->urlImage}}" alt="{{$serie->nom}}">
                     </a>
                 </tr>
             </li>
