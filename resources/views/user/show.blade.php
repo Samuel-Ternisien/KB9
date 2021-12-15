@@ -13,9 +13,9 @@
         <ul>
             @foreach($user->seen() as $vu)
                 <li>
-                    <tr>{{$v->id}}</tr>
-                    <tr>{{$v->nom}}</tr>
-                    <tr>{!!$v->resume!!} </tr>
+                    <tr>{{$vu->id}}</tr>
+                    <tr>{{$vu->nom}}</tr>
+                    <tr>{!!$vu->resume!!} </tr>
                 </li>
             @endforeach
         </ul>
