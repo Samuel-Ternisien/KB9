@@ -29,6 +29,6 @@ class UserController extends Controller
 
         }
 
-        return view('user.show',['user'=>$user,'seen'=>$lst,'count'=>cpt]);
+        return view('user.show',['user'=>$user,'seen'=>$lst,'count'=>$cpt]);
     }
 }
