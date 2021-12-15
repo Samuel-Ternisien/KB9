@@ -30,8 +30,12 @@ class SerieController extends Controller
     public function index()
     {
         $res=DB::table('series')->orderByDesc('premiere')->get();
+        $view = [];
+        for($i=0; $i < 5;$i++){
+            $view[] = $res[$i];
+        }
 
-        return view('series.welcome',['series'=> $res]);
+        return view('series.welcome',['series'=> $view]);
 
     }
 
