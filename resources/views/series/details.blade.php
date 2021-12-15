@@ -20,8 +20,16 @@
             <tr>Date de sortie :{{$serie->premiere}}</tr>
             <tr>Note : {{$serie->note}}</tr>
             <tr>{!!  $serie->resume !!} </tr>
-            <tr>Nombre d'épisodes : {{$episode}}</tr>
-            <tr>Nombre de saison : {{$saison}}</tr>
+            <tr>Nombre d'épisodes : {{$episode_nb}}</tr>
+            <tr>Nombre de saison : {{$saison_nb}}</tr>
+            <ul>
+            @foreach($episode as $episodes)
+                <li>
+                    <tr>
+                        Episode {{$episodes}}
+                    </tr>
+                </li>
+            </ul>
         </li>
     @endforeach
     </ul>
