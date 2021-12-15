@@ -1,24 +1,15 @@
+@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="welcome.css" rel="stylesheet" type="text/css" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>KB9</title>
-
-
-
-    <style>
-        #img{
-            background-size: cover;
-            background-position: center;
-        }
-
-    </style>
 </head>
 <body>
 <header>
@@ -28,7 +19,7 @@
     </div>
 
     <div class="header-top">
-        <a href="#" id="lien-logo"><img src="../../public/img/KB9.svg" alt="" id="logo"></a>
+        <a href="#" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
             <a href="#" class="header-lien" >Connexion</a>
             <a href="#" class="header-lien" >Inscription</a>
