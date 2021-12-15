@@ -36,6 +36,7 @@ class SerieController extends Controller
             }
             return view('series.welcome',['series'=> $res]);
         });
+        return view('series.welcome',['series'=> "tt"]);
 
     }
 
