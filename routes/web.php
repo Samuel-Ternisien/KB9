@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 Route::resource('series', '\App\Http\Controllers\SerieController');
 
+Route::resource('user','\App\Http\Controllers\UserController');
 //Route::post("/login", );
