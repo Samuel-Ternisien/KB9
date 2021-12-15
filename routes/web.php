@@ -20,5 +20,5 @@ Route::get('/', function () {
 Route::resource('series', '\App\Http\Controllers\SerieController');
 Route::get('/series/filtre', [\App\Http\Controllers\TacheController::class, 'filtre']);
 
-Route::get('user/{id}',[\App\Http\Controllers\UserController::class],'show');
+Route::get('user/show/{id}',[\App\Http\Controllers\UserController::class],'show');
 //Route::post("/login", );
