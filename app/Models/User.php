@@ -53,4 +53,15 @@ class User extends Authenticatable
             ->as('when')
             ->withPivot('date_seen');
     }
+
+    function lserie(){
+        $serie=$this->seen();
+        $lst=[];
+        foreach ($serie as $el){
+            if (!(in_array($el,$lst))){
+                $lst[]=$el;
+            }
+        }
+        return $lst;
+    }
 }
