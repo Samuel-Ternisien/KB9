@@ -14,7 +14,7 @@
             <ul>
                 @foreach($seen as $vu)
                     <li>
-                        <tr>{{$vu}}</tr>
+                        <tr>{{$vu->nom}}</tr>
                     </li>
                 @endforeach
             </ul>
@@ -23,7 +23,8 @@
 </div>
 
 
-
+{{--
 <div>
-    <a href="{{route('./')}}">Retour à la page d'accueil</a>
+    <a href="{{('./')}}">Retour à la page d'accueil</a>
 </div>
+--}}
