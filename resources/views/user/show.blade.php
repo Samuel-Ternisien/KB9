@@ -14,7 +14,7 @@
             <ul>
                 @foreach($user->seen as $vu)
                     <li>
-                        <tr>{{$vu->episode_id}}</tr>
+                        <tr>{{$vu->nom}}</tr>
                     </li>
                 @endforeach
             </ul>
