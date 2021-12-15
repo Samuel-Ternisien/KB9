@@ -27,9 +27,9 @@ class SerieController extends Controller
         $this->series = Serie::all();
     }
 
-    public function list(){
+    public function acceuil(){
         $series = Serie::all();
-        return view(index,['series'=> $series]);
+        return view('series.index',['series'=> $series]);
     }
 
     public function index()

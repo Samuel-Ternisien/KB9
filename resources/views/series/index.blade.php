@@ -5,7 +5,6 @@
     <title>Liste de série</title>
 </head>
 <body>
-<h2>Liste des séries disponibles</h2>
 @if(!empty($series))
     <ul>
         @foreach($series as $serie)
@@ -17,7 +16,7 @@
         @endforeach
     </ul>
 @else
-    <h3>aucune série</h3>
+    <h3>Erreur : Aucune série</h3>
 @endif
 </body>
 </html>
