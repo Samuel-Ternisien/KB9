@@ -13,7 +13,7 @@ class SerieController extends Controller
     /**
      * @var Serie[]|\Illuminate\Database\Eloquent\Collection
      */
-    private $series;
+    public $series;
 
     /**
      * Display a listing of the resource.
@@ -98,17 +98,36 @@ class SerieController extends Controller
     }
 
     public function filtre(Request $request) {
+        $nom = $request->get("nom", '');
         $genre = $request->get("genre", '');
-        $series = [];
-        if (empty($genre)) {
-            $series = $this->series;
-        } else {
-            foreach ($this->series as $serie) {
-                if ($serie->id == $genre) {
-                    $series[] = $serie;
+        if($nom){
+            $series = [];
+            if (empty($nom)) {
+                $series = $this->series;
+            } else {
+                foreach (Serie::all() as $serie) {
+                    if (str_contains($serie->nom, $nom)) {
+                        $series[] = $serie;
+                    }
                 }
             }
+            return view('series.filtre', ['series' => $series]);
         }
-        return view('series.filtre', ['series' => $series]);
+        if($genre){
+            $series = [];
+            if (empty($genre)) {
+                $series = $this->series;
+            } else {
+                foreach (Serie::all() as $serie) {
+                    if ($serie->genre == $genre) {
+                        $series[] = $serie;
+                    }
+                }
+            }
+            return view('series.filtre', ['series' => $series]);
+        }
+
+
     }
+
 }
