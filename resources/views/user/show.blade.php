@@ -11,13 +11,7 @@
     {{--Serie vu --}}
     <p><strong> Séries vues</strong>
         <ul>
-            @foreach($user->seen() as $vu)
-                <li>
-                    <tr>{{$vu->id}}</tr>
-                    <tr>{{$vu->nom}}</tr>
-                    <tr>{!!$vu->resume!!} </tr>
-                </li>
-            @endforeach
+            {{$user->seen()}}
         </ul>
 </div>
 
