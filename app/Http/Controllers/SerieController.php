@@ -29,14 +29,9 @@ class SerieController extends Controller
 
     public function index()
     {
-        DB::table('series')->orderBy('premiere','DESC')->chunk(5,function($series){
-            $res = [];
-            foreach (Serie::all() as $serie){
-                $res[] = $serie;
-            }
-            return view('series.welcome',['series'=> $res]);
-        });
-        return view('series.welcome',['series'=> Serie::all()]);
+        $res=DB::table('series')->orderByDesc('premiere')->get(5);
+
+        return view('series.welcome',['series'=> $res]);
 
     }
 

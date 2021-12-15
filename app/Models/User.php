@@ -53,10 +53,4 @@ class User extends Authenticatable
             ->as('when')
             ->withPivot('date_seen');
     }
-
-    function vu(){
-        return DB::table('seen')
-            ->where('user_id', '=', $this->id)
-            ->get();
-    }
 }
