@@ -72,17 +72,6 @@ class SerieController extends Controller
             'date_seen' => now()
         ]);
 
-        $id_serie = DB::table('episodes')->select('serie_id')->where('id', '=', $id_episode)->get();
-
-        foreach ($id_serie as $v){
-            $res = $v->serie_id;
-        }
-
-        return redirect()->action(
-            [SerieController::class, 'serie'], ['id' => $res]
-        );
-
-
     }
 
     public function serie($id) {
