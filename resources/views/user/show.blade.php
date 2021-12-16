@@ -6,8 +6,7 @@
             <a class="header-lien" href="{{ route('register') }}">Register</a>
         @else
             @if (Auth::user()->id!=$user->id)
-                Bonjour {{ Auth::user()->name }}
-                <a href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
+                <a href="{{route("profile",['id'=>Auth::user()->id])}}" class="header-g">Profil</a>
             @endif
             <a href="{{ route('logout') }}"
                onclick="event.preventDefault();
