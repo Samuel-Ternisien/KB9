@@ -64,7 +64,7 @@
                     <h3 class="film-genre">{{$series[$i]->genre}}</h3>
                     <h3 class="film-saison">Nombre de saisons : {{$saison_nb[$i]}}</h3>
                     @auth
-                        <p class="film-vu">{{\Illuminate\Support\Facades\Auth::user()->aVuUneSerie($series[$i]->id) ? "J'ai vu" : "A voir"}}</p>
+                        <p class="film-vu">{{\Illuminate\Support\Facades\Auth::user()->aVuUneSerie($series[$i]->id) ? "Déjà vu" : "A voir"}}</p>
                     @endauth
                 </a>
             @endfor
