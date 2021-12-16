@@ -42,7 +42,7 @@
     <div class="contain-avatar">
         <img src="../{{$user->avatar}}" alt="" class="avatar-img">
         <h3 class="nom-user">{{$user->name}}</h3>
-        <h3 class="nom-user">{{$count}}</h3>
+        <h3 class="nom-count">{{$count}}</h3>
         @if (Auth::user())
             @if (Auth::user()->id==$user->id)
         <h3 class="mail-user">Adresse mail : {{$user->email}}</h3>

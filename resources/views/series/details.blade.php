@@ -62,6 +62,12 @@
     <p class="avis-redac-cont">{!! $series[0]-> avis!!}}</p>
 </div>
 @endif
+@if($series[0]->urlAvis!=null)
+    <h2 class="avis-redac">Avis de la rédaction</h2>
+
+
+    <iframe style="margin-left: 30%; border-radius: 20px;"width="560" height="315" src="https://www.youtube.com/embed/tvCzmBJvhlI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+@endif
 
 <h2 class="avis-redac">liste des épisodes</h2>
 <div class="container-episode-serie" >
