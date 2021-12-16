@@ -66,7 +66,7 @@
 <h2 class="avis-redac">liste des épisodes</h2>
 <div class="container-episode-serie" >
 @for($i=1; $i < $saison_nb+1; $i++)
-<p class="saison-episode-serie" style="display: grid">Saison : {{$i}}</p>
+<p class="saison-episode-serie" style="grid-column: span 2">Saison : {{$i}}</p>
 
 @foreach($episode as $episodes)
     @if($episodes->saison == $i)
