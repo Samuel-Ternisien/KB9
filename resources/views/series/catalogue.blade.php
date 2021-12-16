@@ -68,7 +68,7 @@
                     <h3 class="film-langue">{{$series[$i]->langue}}</h3>
                     <h3 class="film-genre">{{$series[$i]->genre}}</h3>
                     <h3 class="film-saison">Nombre de saisons : {{$saison_nb[$i]}}</h3>
-                    @if($seen[i] == true)
+                    @if($seen[$i] == true)
                         <p class="film-vu">Vous avez vu cette série</p>
                     @endif
                 </a>
