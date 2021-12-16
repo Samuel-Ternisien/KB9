@@ -57,7 +57,6 @@ class User extends Authenticatable
 
     public function aVuUneSerie($id) {
         $nb = Episode::whereRaw("serie_id=?", [$id])->count();
-        dd($nb);
         $vus = $this->seen()->whereRaw("serie_id=?",[$id])->count();
         return $nb == $vus;
     }
