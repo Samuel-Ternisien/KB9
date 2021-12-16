@@ -57,10 +57,9 @@
                 <a class="header-lien" href="{{ route('register') }}">Register</a>
             @else
                 @if (Auth::user())
-                    Bonjour {{ Auth::user()->name }}
-                    <a href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
+                    <a class="header-lien" href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
                 @endif
-                <a href="{{ route('logout') }}"
+                <a class="header-lien" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                     Logout
