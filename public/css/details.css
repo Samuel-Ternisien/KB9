@@ -220,7 +220,7 @@ position: absolute;
     left: 20px;
     top: 15px;
     font-size: 0.7rem;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s ease-in-out;
 
 }
@@ -233,7 +233,7 @@ position: absolute;
     left: 20px;
     top: 35px;
     font-size: 0.7rem;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.5s ease-in-out;
 
 }
