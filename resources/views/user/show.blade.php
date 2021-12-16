@@ -13,7 +13,7 @@
         <div class="header-nav-g">
             <a href="{{route('/')}}" class="header-lien-cat" >Accueil</a>
         </div>
-        <a href="{{route("/")}}" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
+        <a href="{{route("/")}}" id="lien-logo"><img src="../img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
             @guest
                 <a class="header-lien" href="{{ route('login') }}">Login</a>
