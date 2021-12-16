@@ -51,9 +51,6 @@
     <input type="text" placeholder="Une idée de série ?" class="search" name="">
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
-        @for($i=0; $i < count($genre); $i++)
-            <option value="">{{$genre[$i]}}</option>
-        @endfor
     </select>
     <input type="submit" class="submit-search" value="chercher">
 </form>
