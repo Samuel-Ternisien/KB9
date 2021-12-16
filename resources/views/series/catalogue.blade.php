@@ -51,12 +51,9 @@
     <input type="text" placeholder="Une idée de série ?" class="search" name="">
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
-        <option value="">genre 1</option>
-        <option value="">genre 2</option>
-        <option value="">genre 3</option>
-        <option value="">genre 4</option>
-        <option value="">genre 5</option>
-        <option value="">genre 6</option>
+        @foreach($genre as $genres)
+            <option value="">{{$genres}}</option>
+        @endforeach
     </select>
     <input type="submit" class="submit-search" value="chercher">
 </form>

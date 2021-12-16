@@ -29,12 +29,16 @@ class SerieController extends Controller
         $this->series = Serie::all();
     }
 
+    public function genrelist(){
+        $genre = DB::table('series')->select('genre')->distinct()->get();
+        return view('series.catalogue', ['genre' => $genre]);
+    }
+
     public function catalogue(){
 
         $series = [];
         $episode_nb = [];
         $saison_nb = [];
-        $seen = [];
         foreach (Serie::all() as $serie) {
             $id = $serie->id;
             $episode_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->count();
