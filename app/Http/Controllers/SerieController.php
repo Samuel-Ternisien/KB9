@@ -67,7 +67,7 @@ class SerieController extends Controller
     }
 
     public function seen($id_episode, $id) {
-        if(Auth::user()) {
+        if(Auth::user() && Auth::user()->id == $id) {
             DB::table('seen')->insert([
                 'user_id' => $id,
                 'episode_id' => $id_episode,
@@ -83,6 +83,9 @@ class SerieController extends Controller
             return redirect()->action(
                 [SerieController::class, 'serie'], ['id' => $res]
             );
+        } else {
+            return redirect()->route('login');
+
         }
 
     }
