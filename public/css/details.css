@@ -252,12 +252,7 @@ position: absolute;
     }
 
     .info-info-serie {
-        margin-left: 10px;
-        font-size: 12px;
-        margin-top: 3px;
-        display: flex;
-        flex-direction: column;
-        color: white;
+        margin-right: 0px;
     }
 
 }
