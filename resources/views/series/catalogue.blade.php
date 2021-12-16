@@ -49,7 +49,7 @@
 
 </header>
 
-<form action="{{action('SerieController@filtre', ['genre' => ('serie')])}}" method="POST" class="tout-search">
+<form action="" method="POST" class="tout-search">
     <input type="text" placeholder="Une idée de série ?" class="search" name="serie">
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
