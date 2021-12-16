@@ -53,8 +53,8 @@
     <input type="text" placeholder="Une idée de série ?" class="search" name="">
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
-        @foreach($genre as $genres)
-            <option value="{{$genres}}">{{$genres}}</option>
+        @foreach($genres as $genre)
+            <option value="{{$genre->genre}}">{{$genre->genre}}</option>
         @endforeach
     </select>
     <input type="submit" class="submit-search" value="chercher">
