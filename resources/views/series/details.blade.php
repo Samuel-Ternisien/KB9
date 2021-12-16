@@ -72,8 +72,6 @@
     <a class="episode-serie"  href="#" style="background-image: url({{'../' . $episodes->urlImage}}">
         <h3 class="episode-serie-nb">épisode {{$episodes->numero}}</h3>
         <h3 class="episode-serie-titre">{{$episodes->nom}}</h3>
-
-        <p></p>
     </a>
 
 </div>
