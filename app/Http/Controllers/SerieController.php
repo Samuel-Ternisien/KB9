@@ -47,12 +47,13 @@ class SerieController extends Controller
 
     public function serietoseen($id_serie){
         if(Auth::user()) {
-
+            $seen = [];
             foreach (Episode::all() as $episode){
                 $id_episode = DB::table('episodes')->select('id')->where('serie_id', '=', $id_serie)->get();
-                $seen = DB::table('seen')->where('episode_id', '=', $id_episode)->get();
-                echo $seen;
-                return view("series.catalogue", ['series' => $seen]);
+                $seen[] = DB::table('seen')->where('episode_id', '=', $id_episode)->get();
+                foreach ($seen as $s){
+                    echo $s;
+                }
                 if($seen) {
                     return true;
                 }
