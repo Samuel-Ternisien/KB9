@@ -22,6 +22,8 @@
 </head>
 <body>
 <header>
+    <div class="header-back"></div>
+    <div class="header-back-shadow"></div>
     <div class="header-top">
         <div class="header-nav-g">
             <a href="{{route('catalogue')}}" class="header-lien-cat" >Catalogue</a>
@@ -54,19 +56,25 @@
     <input type="text" placeholder="Une idée de série ?" class="search" name="">
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
-        <option value="">genre 1</option>
-        <option value="">genre 2</option>
-        <option value="">genre 3</option>
-        <option value="">genre 4</option>
-        <option value="">genre 5</option>
-        <option value="">genre 6</option>
+        @foreach($genres as $genre)
+            <option value="{{$genre['genre']}}">{{$genre['genre']}}</option>
+        @endforeach
     </select>
     <input type="submit" class="submit-search" value="chercher">
 </form>
+
 <div class="container-serie" >
     @if(!empty($series))
             @for($i=0; $i < count($series); $i++)
-                <p>{{$i}}</p>
+                <a class="serie"  href="{{route("serie",['id'=>$series[$i]->id])}}" style="background-image: url({{$series[$i]->urlImage}}" alt="{{$series[$i]->nom}}";>
+                    <h3 class="film-titre">{{$series[$i]->nom}}</h3>
+                    <h3 class="film-langue">{{$series[$i]->langue}}</h3>
+                    <h3 class="film-genre">{{$series[$i]->genre}}</h3>
+                    <h3 class="film-saison">Nombre de saisons : {{$saison_nb[$i]}}</h3>
+                    @auth
+                        <p class="film-vu">{{\Illuminate\Support\Facades\Auth::user()->aVuUneSerie($series[$i]->id) ? "Déjà vu" : "A voir"}}</p>
+                    @endauth
+                </a>
             @endfor
     @else
         <h3>aucune série</h3>

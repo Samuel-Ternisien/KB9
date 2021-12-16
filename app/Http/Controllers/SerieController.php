@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Episode;
+use App\Models\Serie;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use App\Models\Serie;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -29,17 +30,25 @@ class SerieController extends Controller
     }
 
     public function catalogue(){
+
         $series = [];
         $episode_nb = [];
         $saison_nb = [];
+        $genre = [];
+
         foreach (Serie::all() as $serie) {
             $id = $serie->id;
             $episode_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->count();
             $saison_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
             $series[] = $serie;
+            //$genre[] = DB::table('series')->select('genre')->where('id', '=', $id)->get();
         }
-        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb]);
+        $genres = Serie::distinct("genre")->get();
+        print_r($genres);
+        // return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genres' => $genres]);
     }
+
+
 
     public function index()
     {
@@ -58,9 +67,22 @@ class SerieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $request){
+        $this->validate($request, [
+            'content' => 'required',
+
+        ]);
+        $data = new Comment();
+        $data->content = $request->message;
+        $data->save();
+
+        DB::table('comments')->insert([
+            'content' => $data,
+            'validated'=> False,
+
+        ]);
+
+
     }
 
     /**

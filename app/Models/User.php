@@ -54,4 +54,10 @@ class User extends Authenticatable
             ->as('when')
             ->withPivot('date_seen');
     }
+
+    public function aVuUneSerie($id) {
+        $nb = Episode::whereRaw("serie_id=?", [$id])->count();
+        $vus = $this->seen()->whereRaw("serie_id=?",[$id])->count();
+        return $nb == $vus;
+    }
 }

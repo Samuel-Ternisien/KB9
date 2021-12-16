@@ -32,6 +32,7 @@
                                 <tr>
                                     {{$episodes->nom}}
                                     @if (Auth::user())
+
                                         <a href="{{ url('/seen/' . $episodes->id . '/' . Auth::user()->id) }}" class="btn btn-xs btn-info pull-right">Deja vu</a>
                                     @endif
                                 </tr>
@@ -48,5 +49,15 @@
 @else
     <h3>Série non trouvé</h3>
 @endif
+
+    <form action={{'create'}} method="POST">
+        <div class="form-group">
+            <textarea class="form-control  @error('message') is-invalid @enderror" name="message" id="message" placeholder="Votre message">{{ old('message') }}</textarea>
+            @error('message')
+            <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+        </div>
+        <button type="submit" class="btn btn-secondary">Envoyer !</button>
+    </form>
 </body>
 </html>
