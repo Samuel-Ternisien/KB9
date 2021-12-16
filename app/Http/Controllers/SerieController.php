@@ -29,8 +29,14 @@ class SerieController extends Controller
     }
 
     public function catalogue(){
-        $series = Serie::all();
-        return view('series.catalogue',['series'=> $series]);
+        $series = [];
+        foreach (Serie::all() as $serie) {
+            $series[] = $serie;
+            $id = $serie->id;
+            $episode_nb = DB::table('episodes')->where('serie_id', '=', $id)->count();
+            $saison_nb = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
+            return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, "langue" => $serie->langue, "genre" => $serie->genre]);
+        }
     }
 
     public function index()
@@ -103,6 +109,7 @@ class SerieController extends Controller
         }
         return view("series.details", ['series' => $series]);
     }
+
     /**
      * Show the form for editing the specified resource.
      *

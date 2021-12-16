@@ -58,7 +58,7 @@
                     <h3 class="film-titre">{{$serie->nom}}</h3>
                     <h3 class="film-langue">{{$serie->langue}}</h3>
                     <h3 class="film-genre">{{$serie->genre}}</h3>
-                    <h3 class="film-saison">{{$serie->lesSaisons}}</h3>
+                    <h3 class="film-saison">{{$serie->saison_nb}}</h3>
                     <p class="film-vu">Vous avez vu cette série</p>
                 </a>
             @endforeach
