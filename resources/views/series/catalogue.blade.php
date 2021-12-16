@@ -53,7 +53,7 @@
     <input type="submit" class="submit-search" value="chercher">
 </form>
 
-<form action="./series/filtre" method="GET" class="tout-search-select">
+<form action="./series/filtre" method="GET" class="tout-search">
     <select name="genre" class="search">
         <option value="">Vous voulez quel style de séries ?</option>
         @foreach($genres as $genre)
