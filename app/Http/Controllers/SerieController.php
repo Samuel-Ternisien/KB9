@@ -47,7 +47,7 @@ class SerieController extends Controller
              $genres[]=$genre->genre;
          }
         //$genres = array_unique($genres, 'unique');
-        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genres' => array_key($genres)]);
+        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genres' => array_keys($genres)]);
     }
 
 
