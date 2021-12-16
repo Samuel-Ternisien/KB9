@@ -13,20 +13,64 @@
 </head>
 <body>
 <header>
-    <div class="header-back">
+
+
+    <div id="dvImage" style="position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        filter: brightness(60%);
+        filter: grayscale(20%);
+        filter: opacity(80%) ;
+        z-index: -1;">
     </div>
-    <div class="header-back-shadow">
-    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        var images = ["arcane.jpg","breakbad.jpg","loki.jpg","snk.png","squidgame.jpg"];
+        $(function () {
+            var i = 0;
+            $("#dvImage").css("background-image", "url(img/carousel/" + images[i] + ")");
+            setInterval(function () {
+                i++;
+                if (i == images.length) {
+                    i = 0;
+                }
+                $("#dvImage").fadeOut("slow", function () {
+                    $(this).css("background-image", "url(img/carousel/" + images[i] + ")");
+                    $(this).fadeIn("slow");
+                });
+            }, 5000);
+        });
+    </script>
+    <div class="header-back-shadow"></div>
+
 
     <div class="header-top">
+        <div class="header-nav-g">
+            <a href="{{route('catalogue')}}" class="header-lien-cat" >Catalogue</a>
+        </div>
         <a href="#" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
-            @yield('connection ')
-            <a href="#" class="header-lien" >Connexion</a>
-            <a href="#" class="header-lien" >Inscription</a>
+            @guest
+                <a class="header-lien" href="{{ route('login') }}">Login</a>
+                <a class="header-lien" href="{{ route('register') }}">Register</a>
+            @else
+                @if (Auth::user())
+                    Bonjour {{ Auth::user()->name }}
+                    <a href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
+                @endif
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endguest
         </div>
     </div>
-
 </header>
 
 
@@ -34,12 +78,12 @@
 <div class="container-card">
 @if(!empty($series))
     @foreach($series as $serie)
-        <a class="card" id="img" style="background-image: url({{$serie->urlImage}});" href="#">
+        <a class="card" id="img" style="background-image: url({{$serie->urlImage}});" href="{{route("serie",['id'=>$serie->id])}}">
             <h3 class="titre-film">{{$serie->nom}}</h3>
         </a>
     @endforeach
 @else
-    <h3>aucun smartphone</h3>
+    <h3>aucune série</h3>
 @endif
 
 </div>
@@ -47,7 +91,7 @@
 
 <footer class="footer-accueil">
     <div class="footer-accueil-cont" >
-        <p class="footer-accueil-droit">Tout droits réservé à KB9</p>
+        <p class="footer-accueil-droit">Tous droits réservés à KB9</p>
 
         <a href="#"><img src="img/youtube.png" alt="" id="ytb"></a>
     </div>

@@ -1,0 +1,342 @@
+
+@media screen and (min-width: 1000px) {
+
+    body{
+        margin: 0 auto;
+        background-color: #263F73;
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+
+
+
+
+
+
+
+    .header-back-shadow{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        box-shadow: inset 0 100px 100px -30px #000000;
+        z-index: -1;
+
+    }
+
+    #logo{
+        width: 150px;
+        margin-top: 20px;
+
+    }
+
+    #lien-logo{
+        margin-left: 43% ;
+
+    }
+
+
+    .ins-log{
+        position: absolute;
+        right: 0;
+        top: 30px;
+        text-decoration: none;
+        width: 20%;
+        text-align: center;
+
+    }
+
+    .header-lien{
+        font-size: 20px;
+        margin-right: 5%;
+        text-decoration: none;
+        color: white;
+
+    }
+
+    .header-lien:hover{
+        text-decoration: underline 5px #F25D27;
+
+    }
+
+    .tout-search{
+        display: flex;
+        margin-top: 15vh;
+
+        margin-left: 20%;
+    }
+
+    .search{
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+
+        padding-right: 20%;
+        padding-left: 20%;
+        border-radius: 10px;
+        border: none;
+    }
+
+
+    .selector-genre{
+        margin-left: -7%;
+        padding-right: 2%;
+        padding-left: 2%;
+
+        border-left: solid 2px #263F73;
+    }
+
+
+
+    .submit-search{
+        border: none;
+        margin-left: -30px;
+        padding-left: 20px;
+        border-radius: 20px;
+        padding-right: 20px;
+        background-color: #F2916D;
+        color: white;
+    }
+
+
+
+    .container-serie{
+        margin-top: 50px;
+        height: 50vh;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap:  5px;
+        margin-left: 10%;
+    }
+
+    .serie {
+        display: flex;
+        height: 30vh;
+        width: 100%;
+        background-color: #17141d;
+        border-radius: 10px;
+        transition: 0.4s ease-out;
+        position: relative;
+        margin-right: 10%;
+
+        background-size: 100%;
+        background-position: center;
+        box-shadow: inset 0 100px 100px -30px #000000;
+        transition: all 1s ease-in-out;
+    }
+
+    .serie:hover{
+        background-size: 110%;
+        filter: brightness(80%) ;
+    }
+
+
+    .film-titre{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        font-size: 0.7rem;
+    }
+
+
+    .film-vu{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 12%;
+        top: 22.7vh;
+        font-size: 0.7rem;
+        background-color: #263F73;
+        padding-bottom: 2vh;
+        padding-top: 2vh;
+        padding-left: 2vh;
+        padding-right: 2vh;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .serie:hover .film-vu{
+        opacity: 1;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    body{
+        margin: 0 auto;
+        background-color: #263F73;
+        font-family: 'Poppins', sans-serif;
+    }
+
+
+
+
+
+
+
+
+
+    .header-back-shadow{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        box-shadow: inset 0 100px 100px -30px #000000;
+        z-index: -1;
+
+    }
+
+    #logo{
+        width: 150px;
+        margin-top: 20px;
+
+    }
+
+    #lien-logo{
+        margin-left: 43% ;
+
+    }
+
+
+    .ins-log{
+        position: absolute;
+        right: 0;
+        top: 30px;
+        text-decoration: none;
+        width: 20%;
+        text-align: center;
+
+    }
+
+    .header-lien{
+        font-size: 20px;
+        margin-right: 5%;
+        text-decoration: none;
+        color: white;
+
+    }
+
+    .header-lien:hover{
+        text-decoration: underline 5px #F25D27;
+
+    }
+
+    .tout-search{
+        display: flex;
+        margin-top: 15vh;
+
+        margin-left: 17%;
+    }
+
+    .search{
+        padding-top: 2vh;
+        font-size: 20%;
+        padding-bottom: 2vh;
+
+        padding-right: 10%;
+        padding-left: 10%;
+        border-radius: 10px;
+        border: none;
+    }
+
+
+    .selector-genre{
+        margin-left: -7%;
+        padding-right: 2%;
+        padding-left: 2%;
+        font-size: 20%;
+        border-left: solid 2px #263F73;
+    }
+
+
+
+    .submit-search{
+        border: none;
+        font-size: 20%;
+
+        margin-left: -30px;
+        padding-left: 10px;
+        border-radius: 20px;
+        padding-right: 20px;
+        background-color: #F2916D;
+        color: white;
+    }
+
+
+
+    .container-serie{
+        margin-top: 50px;
+        height: 50vh;
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap:  5px;
+        margin-left: 10%;
+    }
+
+    .serie {
+        display: flex;
+        height: 20vh;
+        width: 100%;
+        background-color: #17141d;
+        border-radius: 10px;
+        transition: 0.4s ease-out;
+        position: relative;
+        margin-right: 10%;
+
+        background-size: cover;
+        background-position: center;
+        box-shadow: inset 0 100px 100px -30px #000000;
+        transition: all 1s ease-in-out;
+    }
+
+    .serie:hover{
+        background-size: 180%;
+        filter: brightness(80%) ;
+    }
+
+
+    .film-titre{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        font-size: 0.7rem;
+    }
+
+
+    .film-vu{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 16%;
+        top: 14vh;
+
+        font-size: 0.4rem;
+        background-color: #263F73;
+        padding-bottom: 2vh;
+        padding-top: 2vh;
+        padding-left: 2vh;
+        padding-right: 2vh;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        opacity: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+
+
+}

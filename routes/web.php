@@ -17,7 +17,6 @@ Route::get('/', [\App\Http\Controllers\SerieController::class, 'index']);
 Route::get('/series/filtre', [\App\Http\Controllers\SerieController::class, 'filtre']);
 Route::get('/acceuil', [\App\Http\Controllers\SerieController::class, 'acceuil']);
 Route::get('/series/{id}', [\App\Http\Controllers\SerieController::class, 'serie']);
-Route::get('/seen/{id_serie}/{id}', [\App\Http\Controllers\SerieController::class, 'seen']);
 Route::resource('series', '\App\Http\Controllers\SerieController');
 
 

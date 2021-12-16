@@ -1,0 +1,260 @@
+
+@media screen and (min-width: 800px) {
+    body{
+        margin: 0 auto;
+        background-color: #263F73;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+    }
+    #logo{
+        width: 150px;
+        margin-top: 20px;
+
+    }
+
+    #lien-logo{
+        margin-left: 46.5% ;
+
+    }
+
+
+    .ins-log{
+        position: absolute;
+        right: 0;
+        top: 30px;
+        text-decoration: none;
+        width: 20%;
+        text-align: center;
+
+    }
+    .header-lien{
+        font-size: 20px;
+        margin-right: 5%;
+        text-decoration: none;
+        color: white;
+
+    }
+    .header-back-shadow{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        box-shadow: inset 0 100px 100px -30px #000000;
+        z-index: -1;
+
+    }
+
+    .header-lien:hover{
+        text-decoration: underline 5px #F25D27;
+
+    }
+    #email{
+        border-radius: 10px;
+        border: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    #password{
+        border-radius: 10px;
+        border: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    .card-header{
+        font-size: 2.5rem;
+        padding-top: 180px;
+        color: white;
+    }
+    .row5{
+        padding-top: 30px;
+    }
+    .row6{
+        padding-top: 10px;
+    }
+    .row7{
+        padding-top: 10px;
+    }
+    .row8{
+        padding-top: 10px;
+    }
+    .btn {
+        display: block;
+        width: 90px;;
+        height: 30px;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        background-image: linear-gradient(to right, #F25D27, #F25D27, #F25D27);
+        background-size: 200%;
+        font-size: 0.8rem;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        margin: 1rem 0;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+    .form-control{
+        background-color: white;
+    }
+    .container{
+        text-align: center;
+    }
+
+    .submitButton{
+        padding-left: 48%;
+    }
+    .footer-accueil{
+        padding-top: 30px;
+        padding-bottom: 20px;
+
+        background-color: #1c2e55;
+        color: white;
+        margin-top: 28.9vh;
+
+    }
+
+
+    .footer-accueil-droit{
+        margin-left: 20px;
+    }
+
+    .footer-accueil-cont{
+        top: 120vh;
+        display: flex;
+        margin-left: 10%;
+    }
+}
+@media screen and (max-width: 800px) {
+
+    body{
+        margin: 0 auto;
+        background-color: #263F73;
+        font-family: 'Poppins', sans-serif;
+        color: white;
+    }
+    .header-back-shadow{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        box-shadow: inset 0 100px 100px -30px #000000;
+        z-index: -1;
+
+    }
+
+    #logo{
+        width: 150px;
+        margin-top: 20px;
+
+    }
+
+    #lien-logo{
+        margin-left: 2% ;
+
+    }
+
+
+    .ins-log{
+        position: absolute;
+        right: 0;
+        top: 35px;
+        text-decoration: none;
+        width: 20%;
+        text-align: center;
+        margin-right: 20px
+
+    }
+
+    .header-lien{
+        margin-right: 5%;
+        text-decoration: none;
+        color: white;
+    }
+    .container-card {
+        position: absolute;
+        height: 50vh;
+        width: 80%;
+        top: 120vh;
+        display: flex;
+        margin-left: 10%;
+    }
+
+    .card-header{
+        font-size: 1.5rem;
+        padding-top: 180px;
+        color: white;
+    }
+    .row1{
+        padding-top: 30px;
+    }
+    .row2{
+        padding-top: 10px;
+    }
+    .row3{
+        padding-top: 10px;
+    }
+    .row4{
+        padding-top: 10px;
+    }
+    .form-control{
+        background-color: white;
+    }
+    #email{
+        border-radius: 10px;
+        border: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    #password{
+        border-radius: 10px;
+        border: none;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    .container{
+        text-align: center;
+    }
+    .btn {
+        display: block;
+        width: 90px;;
+        height: 30px;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+        background-image: linear-gradient(to right, #F25D27, #F25D27, #F25D27);
+        background-size: 200%;
+        font-size: 0.8rem;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        margin: 1rem 0;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .submitButton{
+        padding-left: 40%;
+    }
+    .footer-accueil{
+        padding-top: 30px;
+        padding-bottom: 20px;
+        background-color: #1c2e55;
+        color: white;
+        margin-top: 37.7vh;
+
+    }
+
+
+    .footer-accueil-droit{
+        margin-left: 20px;
+    }
+
+    .footer-accueil-cont{
+        top: 120vh;
+        display: flex;
+        margin-left: 10%;
+    }
+}
