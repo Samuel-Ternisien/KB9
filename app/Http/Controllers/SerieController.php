@@ -179,7 +179,7 @@ class SerieController extends Controller
                 $series = $this->series;
             } else {
                 foreach (Serie::all() as $serie) {
-                    if (str_contains($serie->nom, $nom)) {
+                    if (str_contains(strtoupper($serie->nom), strtoupper($nom))) {
                         $series[] = $serie;
                         $episode_nb = DB::table('episodes')->where('serie_id', '=', $serie->id)->count();
                         $saison_nb = DB::table('episodes')->where('serie_id', '=', $serie->id)->max('saison');
