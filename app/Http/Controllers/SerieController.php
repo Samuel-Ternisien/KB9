@@ -44,8 +44,7 @@ class SerieController extends Controller
             //$genre[] = DB::table('series')->select('genre')->where('id', '=', $id)->get();
         }
         $genres = Serie::distinct("genre")->get();
-        print_r($genres);
-        // return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genres' => $genres]);
+        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genres' => $genres]);
     }
 
 
