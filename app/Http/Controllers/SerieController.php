@@ -199,11 +199,20 @@ class SerieController extends Controller
             if (empty($genre)) {
                 $series = $this->series;
             } else {
+                $bool = false;
                 foreach (Serie::all() as $serie) {
-                    if ($serie->genre == $genre) {
+                    if (str_contains(strtoupper($serie->genre), strtoupper($genre))) {
+                        $bool = true;
                         $series[] = $serie;
+                        $episode_nb = DB::table('episodes')->where('serie_id', '=', $serie->id)->count();
+                        $saison_nb = DB::table('episodes')->where('serie_id', '=', $serie->id)->max('saison');
+                        $episode = DB::table('episodes')->select('nom', 'saison', 'id')->where('serie_id', '=', $serie->id)->get();
                     }
                 }
+                if($bool == true){
+                    return view("series.filtre", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, "episode" => $episode]);
+                }
+
             }
             return view('series.filtre', ['series' => $series]);
         }
