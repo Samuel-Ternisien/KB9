@@ -52,7 +52,7 @@
 <div class="container-serie" >
     @if(!empty($series))
         @for($i=0; $i < count($series); $i++)
-            <a class="serie"  href="{{route("serie",['id'=>$series[$i]->id])}}" style="background-image: url({{$series[$i]->urlImage}}" alt="{{$series[$i]->nom}}";>
+            <a class="serie"  href="{{route("serie",['id'=>$series[$i]->id])}}" style="background-image: url({{'./' . $series[$i]->urlImage}}" alt="{{$series[$i]->nom}}";>
                 <h3 class="film-titre">{{$series[$i]->nom}}</h3>
                 <h3 class="film-langue">{{$series[$i]->langue}}</h3>
                 <h3 class="film-genre">{{$series[$i]->genre}}</h3>
