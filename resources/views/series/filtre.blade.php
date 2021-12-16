@@ -49,20 +49,6 @@
 
 </header>
 
-<form action="./series/filtre" method="GET" class="tout-search">
-    <input type="text" placeholder="Une idée de série ?" class="search" name="nom">
-    <input type="submit" class="submit-search" value="chercher">
-</form>
-<form action="./series/filtre" method="GET" class="tout-search">
-    <select name="genre" class="selector-genre">
-        <option value="">Vous voulez quel style de séries ?</option>
-        @foreach($genres as $genre)
-            <option value="{{$genre}}">{{$genre}}</option>
-        @endforeach
-    </select>
-    <input type="submit" class="submit-search" value="chercher">
-</form>
-
 <div class="container-serie" >
     @if(!empty($series))
         @for($i=0; $i < count($series); $i++)
