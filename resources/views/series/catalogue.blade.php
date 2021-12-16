@@ -49,7 +49,7 @@
 
 </header>
 
-<form action="/filtre/" method="POST" class="tout-search">
+<form action="/series/filtre" method="POST" class="tout-search">
     <input type="text" placeholder="Une idée de série ?" class="search" name="nom">
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
