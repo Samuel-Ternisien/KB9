@@ -41,7 +41,7 @@ class SerieController extends Controller
             $episode_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->count();
             $saison_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
             $series[] = $serie;
-            $genre[] = DB::table('series')->select('genre')->distinct()->get();
+            $genre[] = DB::table('series')->select('genre')->get();
         }
         return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genre' => $genre]);
     }
