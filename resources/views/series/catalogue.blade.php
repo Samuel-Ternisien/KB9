@@ -21,7 +21,7 @@
 <header>
     <div class="header-top">
         <div class="header-nav-g">
-            <a href="{{route('/')}}" class="header-lien-cat" >Accueil</a>
+            <a href="{{route('catalogue')}}" class="header-lien-cat" >Catalogue</a>
         </div>
         <a href="{{route("/")}}" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
@@ -30,9 +30,10 @@
                 <a class="header-lien" href="{{ route('register') }}">Register</a>
             @else
                 @if (Auth::user())
-                    <a class="header-lien" href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
+                    Bonjour {{ Auth::user()->name }}
+                    <a href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
                 @endif
-                <a class="header-lien" href="{{ route('logout') }}"
+                <a href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                     Logout
@@ -50,12 +51,6 @@
     <input type="text" placeholder="Une idée de série ?" class="search" name="">
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
-        <option value="">genre 1</option>
-        <option value="">genre 2</option>
-        <option value="">genre 3</option>
-        <option value="">genre 4</option>
-        <option value="">genre 5</option>
-        <option value="">genre 6</option>
     </select>
     <input type="submit" class="submit-search" value="chercher">
 </form>
