@@ -31,16 +31,15 @@ class SerieController extends Controller
 
     public function serietoseen($id_serie){
         if(Auth::user()) {
-
+            $id_episode = [];
             foreach (Episode::all() as $episode){
-                $id_episode = DB::table('episodes')->select('id')->where('serie_id', '=', $id_serie)->get();
-                $seen = DB::table('seen')->select('episode_id')->where('episode_id', '=', $id_episode);
-                if($seen->first()) {
-                    return $seen;
-                }
+                $id_episode[] = DB::table('episodes')->select('id')->where('serie_id', '=', $id_serie)->get();
             }
-            return false;
 
+            foreach ($id_episode as $episode_id) {
+                $seen = DB::table('seen')->where('episode_id', '=',  $episode_id)->get();
+            }
+            echo $seen;
         }
     }
 
