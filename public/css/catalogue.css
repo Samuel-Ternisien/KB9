@@ -98,14 +98,14 @@
     .tout-search{
         display: flex;
         margin-top: 15vh;
-        min-width: border-box;
+        min-width: 40%;
         margin-left: 20%;
     }
 
     .tout-searchh{
         display: flex;
         margin-top: 5vh;
-        min-width: border-box;
+        min-width: 40%;
         margin-left: 20%;
     }
 
