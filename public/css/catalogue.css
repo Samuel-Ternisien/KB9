@@ -1,3 +1,4 @@
+
 @media screen and (min-width: 1000px) {
 
     body{
@@ -5,6 +6,15 @@
         background-color: #263F73;
         font-family: 'Poppins', sans-serif;
     }
+
+
+
+
+
+
+
+
+
     .header-back-shadow{
         position: absolute;
         width: 100%;
@@ -24,32 +34,6 @@
         margin-left: 43% ;
 
     }
-    .header-nav{
-        position: absolute;
-        left: 0;
-        top: 30px;
-        text-decoration: none;
-        width: 20%;
-        text-align: center;
-    }
-    .header-nav-g{
-        position: absolute;
-        left: 0;
-        top: 30px;
-        text-decoration: none;
-        width: 20%;
-        text-align: center;
-    }
-    .header-lien-cat{
-        font-size: 20px;
-        margin-left: 5%;
-        text-decoration: none;
-        color: white;
-    }
-    .header-lien-cat:hover{
-        text-decoration: underline 5px #F25D27;
-    }
-
 
 
     .ins-log{
@@ -81,7 +65,12 @@
 
         margin-left: 20%;
     }
-
+    .tout-search-select{
+        display: flex;
+        margin-left: 37%;
+        padding-top: 4vh;
+        padding-bottom: 1vh;
+    }
     .search{
         padding-top: 2vh;
         padding-bottom: 2vh;
@@ -95,10 +84,13 @@
 
     .selector-genre{
         margin-left: -7%;
-        padding-right: 2%;
+        padding-right: 4%;
         padding-left: 2%;
-
+        padding-top: 1vh;
+        padding-bottom: 1vh;
         border-left: solid 2px #263F73;
+        border-radius: 10px;
+
     }
 
 
@@ -146,6 +138,7 @@
         filter: brightness(80%) ;
     }
 
+
     .film-titre{
         color: white;
         font-weight: 300;
@@ -154,31 +147,6 @@
         top: 15px;
         font-size: 0.7rem;
     }
-    .film-langue{
-        color: white;
-        font-weight: 300;
-        position: absolute;
-        left: 20px;
-        top: 30px;
-        font-size: 0.7rem;
-    }
-    .film-genre{
-        color: white;
-        font-weight: 300;
-        position: absolute;
-        left: 20px;
-        top: 45px;
-        font-size: 0.7rem;
-    }
-    .film-saison{
-        color: white;
-        font-weight: 300;
-        position: absolute;
-        left: 20px;
-        top: 60px;
-        font-size: 0.7rem;
-    }
-
 
 
     .film-vu{
@@ -354,30 +322,6 @@
         position: absolute;
         left: 20px;
         top: 15px;
-        font-size: 0.7rem;
-    }
-    .film-langue{
-        color: white;
-        font-weight: 300;
-        position: absolute;
-        left: 20px;
-        top: 30px;
-        font-size: 0.7rem;
-    }
-    .film-genre{
-        color: white;
-        font-weight: 300;
-        position: absolute;
-        left: 100px;
-        top: 45px;
-        font-size: 0.7rem;
-    }
-    .film-saison{
-        color: white;
-        font-weight: 300;
-        position: absolute;
-        left: 20px;
-        top: 60px;
         font-size: 0.7rem;
     }
 
