@@ -54,6 +54,7 @@
     </select>
     <input type="submit" class="submit-search" value="chercher">
 </form>
+
 <div class="container-serie" >
     @if(!empty($series))
             @for($i=0; $i < count($series); $i++)
