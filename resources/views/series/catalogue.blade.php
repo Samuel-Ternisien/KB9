@@ -64,7 +64,7 @@
     @if(!empty($series))
             @for($i=0; $i < $series; $i++)
 
-                <a class="serie"  href="{{route("serie",['id'=>$series[$i]->id])}}" style="background-image: url({{$serie->urlImage}}" alt="{{$series[$i]->nom}}";>
+                <a class="serie"  href="{{route("serie",['id'=>$series[$i]->id])}}" style="background-image: url({{$serie[$i]->urlImage}}" alt="{{$series[$i]->nom}}";>
 
                     <h3 class="film-titre">{{$series->nom}}</h3>
                     <h3 class="film-langue">{{$series->langue}}</h3>
