@@ -32,11 +32,13 @@
         width: 20%;
         text-align: center;
     }
-    header-lien-cat{
-        font-size: 20px;
-        margin-right: 5%;
+    .header-nav-g{
+        position: absolute;
+        left: 0;
+        top: 30px;
         text-decoration: none;
-        color: white;
+        width: 20%;
+        text-align: center;
     }
 
 
