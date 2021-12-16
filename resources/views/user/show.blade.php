@@ -9,19 +9,28 @@
 </head>
 <body>
 <header>
-    <div class="header-back">
-    </div>
-    <div class="header-back-shadow">
-    </div>
-
     <div class="header-top">
         <div class="header-nav-g">
-            <a href="#" class="header-lien-cat" >Catalogue</a>
+            <a href="{{route('/')}}" class="header-lien-cat" >Accueil</a>
         </div>
-        <a href="{{route("/")}}" id="lien-logo"><img src="../img/KB9.svg" alt="" id="logo"></a>
+        <a href="{{route("/")}}" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
-            <a href="{{route("login")}}" class="header-lien" >Connexion</a>
-            <a href="{{route("register")}}" class="header-lien" >Inscription</a>
+            @guest
+                <a class="header-lien" href="{{ route('login') }}">Login</a>
+                <a class="header-lien" href="{{ route('register') }}">Register</a>
+            @else
+                @if (Auth::user())
+                    <a class="header-lien" href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
+                @endif
+                <a class="header-lien" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endguest
         </div>
     </div>
 
@@ -69,6 +78,10 @@
             <div class="header-com-info">
                 <h3 class="nom-com">{{$user->name}}</h3>
                 <p class="titre-serie-header-com">a commenté sur {{\App\Models\Serie::find($com->serie_id)->nom}}</p>
+            </div>
+            <div class="div-com">
+                <p class="com">{!! $com->content !!}
+                </p>
             </div>
         </div>
 
