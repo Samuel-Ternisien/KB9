@@ -35,7 +35,7 @@ class SerieController extends Controller
         $episode_nb = [];
         $saison_nb = [];
         $genre = [];
-        $genre[] = DB::table('series')->select('genre')->distinct()->get();
+        $genre[] = DB::table('series')->selectRaw('genre')->distinct()->get();
         foreach (Serie::all() as $serie) {
             $id = $serie->id;
             $episode_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->count();
