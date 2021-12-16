@@ -19,6 +19,8 @@
 </head>
 <body>
 <header>
+    <div class="header-back"></div>
+    <div class="header-back-shadow"></div>
     <div class="header-top">
         <div class="header-nav-g">
             <a href="{{route('catalogue')}}" class="header-lien-cat" >Catalogue</a>
