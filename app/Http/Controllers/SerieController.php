@@ -34,9 +34,12 @@ class SerieController extends Controller
 
             foreach (Episode::all() as $episode){
                 $id_episode = DB::table('episodes')->select('id')->where('serie_id', '=', $id_serie)->get();
-                $seen = DB::table('seen')->where('episode_id', '=', $id_episode);
+                $seen = DB::table('seen')->select('episode_id')->where('episode_id', '=', $id_episode);
+                if($seen->first()) {
+                    return $seen;
+                }
             }
-            return $seen;
+            return false;
 
         }
     }
