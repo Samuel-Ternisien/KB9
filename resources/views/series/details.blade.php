@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Liste de série</title>
-</head>
-<body>
+@section('content')
 @if(!empty($series))
     <ul>
     @foreach($series as $serie)
@@ -46,5 +40,4 @@
 @else
     <h3>Série non trouvé</h3>
 @endif
-</body>
-</html>
+@endsection
