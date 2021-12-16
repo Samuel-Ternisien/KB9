@@ -17,7 +17,7 @@
         @endforeach
     </ul>
 @else
-    <h3>aucun smartphone</h3>
+    <h3>aucune série</h3>
 @endif
 </body>
 </html>
