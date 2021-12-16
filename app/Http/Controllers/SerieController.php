@@ -36,7 +36,7 @@ class SerieController extends Controller
                 $id_episode = DB::table('episodes')->select('id')->where('serie_id', '=', $id_serie)->get();
                 $seen = DB::table('seen')->where('episode_id', '=', $id_episode);
                 if($seen->first()) {
-                    return true;
+                    return $seen;
                 }
             }
             return false;
