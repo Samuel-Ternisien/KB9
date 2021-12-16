@@ -62,7 +62,7 @@
     <p class="avis-redac-cont">{!! $series[0]-> avis!!}}</p>
 </div>
 @endif
-@if($series[0]->urlavis!=null)
+@if($series[0]->urlAvis!=null)
     <h2 class="avis-redac">Avis de la rédaction</h2>
 
 
