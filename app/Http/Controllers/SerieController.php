@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Serie;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class SerieController extends Controller
@@ -66,22 +67,23 @@ class SerieController extends Controller
     }
 
     public function seen($id_episode, $id) {
-        DB::table('seen')->insert([
-            'user_id' => $id,
-            'episode_id' => $id_episode,
-            'date_seen' => now()
-        ]);
+        if(Auth::user()) {
+            DB::table('seen')->insert([
+                'user_id' => $id,
+                'episode_id' => $id_episode,
+                'date_seen' => now()
+            ]);
 
-        $id_serie = DB::table('episodes')->select('serie_id')->where('id', '=', $id_episode)->get();
+            $id_serie = DB::table('episodes')->select('serie_id')->where('id', '=', $id_episode)->get();
 
-        foreach ($id_serie as $v){
-            $res = $v->serie_id;
+            foreach ($id_serie as $v) {
+                $res = $v->serie_id;
+            }
+
+            return redirect()->action(
+                [SerieController::class, 'serie'], ['id' => $res]
+            );
         }
-
-        return redirect()->action(
-            [SerieController::class, 'serie'], ['id' => $res]
-        );
-
 
     }
 
