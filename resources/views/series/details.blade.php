@@ -2,62 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Liste de série</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/details.css">
+    <title>{{$series[0]->nom}}</title>
 </head>
 <body>
-@if(!empty($series))
-    <ul>
-    @foreach($series as $serie)
-        <li>
-            <tr>
-                <a href="#">
-                    <img src="../{{$serie->urlImage}}" alt="{{$serie->nom}}">
+<header>
+    <div class="header-back"></div>
+    <div class="header-back-shadow"></div>
+    <div class="header-top">
+        <div class="header-nav-g">
+            <a href="{{route('/')}}" class="header-lien-cat" >Accueil</a>
+        </div>
+        <a href="{{route("/")}}" id="lien-logo"><img src="../img/KB9.svg" alt="" id="logo"></a>
+        <div class="ins-log">
+            @guest
+                <a class="header-lien" href="{{ route('login') }}">Login</a>
+                <a class="header-lien" href="{{ route('register') }}">Register</a>
+            @else
+                @if (Auth::user())
+                    <a class="header-lien" href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
+                @endif
+                <a class="header-lien" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                    Logout
                 </a>
-            </tr>
-            <tr>Nom : {{$serie->nom}}</tr>
-            <tr>Genre : {{$serie->genre}}</tr>
-            <tr>VO :{{$serie->langue}}</tr>
-            <tr>Date de sortie :{{$serie->premiere}}</tr>
-            <tr>Note : {{$serie->note}}</tr>
-            <tr>{!!  $serie->resume !!} </tr>
-            <tr>Nombre d'épisodes : {{$episode_nb}}</tr>
-            <tr>Nombre de saison : {{$saison_nb}}</tr>
-            <br>
-            @for($i=1; $i < $saison_nb+1; $i++)
-                <tr>Saison : {{$i}}</tr>
-                <ul>
-                    @foreach($episode as $episodes)
-                        @if($episodes->saison == $i)
-                            <li>
-                                <tr>
-                                    {{$episodes->nom}}
-                                    @if (Auth::user())
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endguest
+        </div>
+    </div>
 
-                                        <a href="{{ url('/seen/' . $episodes->id . '/' . Auth::user()->id) }}" class="btn btn-xs btn-info pull-right">Deja vu</a>
-                                    @endif
-                                </tr>
-                            </li>
-                        @endif
-                    @endforeach
-                </ul>
+</header>
+<div class="cont-info-serie">
+    @if(!empty($series))
+        @foreach($series as $serie)
+    <img src="../{{$serie->urlImage}}" alt="" class="img-info-serie">
+    <div class="info-info-serie">
+        <h2>{{$serie->nom}}</h2>
+        <p>{!!$serie->resume!!}</p>
+        <p>Genre : {{$serie->genre}}</p>
+        <p>VO : {{$serie->langue}}</p>
+        <p>Date de sortie : {{$serie->premiere}}</p>
+        <p>Nombre d'épisode : {{$episode_nb}}</p>
+        <p>Nombre de saison : {{$saison_nb}}</p>
+        <p>Note : 8/10</p>
+    </div>
+</div>
+@endforeach
+ @endif
+@if($series[0]->avis!=null)
+<h2 class="avis-redac">Avis de la rédaction</h2>
 
-            @endfor
 
-        </li>
-    @endforeach
-    </ul>
-@else
-    <h3>Série non trouvé</h3>
+<div class="contain-avis-redac">
+    <p class="avis-redac-cont">{!! $series[0]-> avis!!}}</p>
+</div>
 @endif
 
-    <form action={{'create'}} method="POST">
-        <div class="form-group">
-            <textarea class="form-control  @error('message') is-invalid @enderror" name="message" id="message" placeholder="Votre message">{{ old('message') }}</textarea>
-            @error('message')
-            <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-        <button type="submit" class="btn btn-secondary">Envoyer !</button>
-    </form>
+<h2 class="avis-redac">liste des épisodes</h2>
+@for($i=1; $i < $saison_nb+1; $i++)
+<p class="saison-episode-serie">Saison : {{$i}}</p>
+@foreach($episode as $episodes)
+    @if($episodes->saison == $i)
+<div class="container-episode-serie" >
+    <a class="episode-serie"  href="#" style="background-image: url()">
+        <h3 class="episode-serie-nb">épisode {{$episodes->id}}</h3>
+        <h3 class="episode-serie-titre">{{$episodes->nom}}</h3>
+
+        <p></p>
+    </a>
+
+</div>
+    @endif
+@endforeach
+@endfor
+
+
 </body>
 </html>

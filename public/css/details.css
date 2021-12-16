@@ -1,0 +1,246 @@
+body{
+    margin: 0 auto;
+    background-color: #263F73;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+.header-back{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/loki.jpg);
+    background-position: center;
+    background-size: cover;
+    filter: brightness(60%);
+    filter: grayscale(20%);
+    filter: opacity(80%) ;
+    z-index: -1;
+    
+}
+
+
+
+.header-back-shadow{
+position: absolute;
+    width: 100%;
+    height: 100vh;
+    box-shadow: inset 0 100px 100px -30px #000000;
+    z-index: -1;
+
+}
+
+#logo{
+    width: 150px;
+    margin-top: 20px;
+
+}
+
+#lien-logo{
+    margin-left: 43% ;
+
+}
+
+.header-nav-g{
+    position: absolute;
+    left: 0;
+    top: 30px;
+    text-decoration: none;
+    width: 20%;
+    text-align: center;
+
+}
+
+.header-lien-cat{
+    font-size: 20px;
+    margin-left: 5%;
+    text-decoration: none;
+    color: white;
+}
+
+.header-lien-cat:hover{
+    text-decoration: underline 5px #F25D27;
+
+}
+
+.ins-log{
+    position: absolute;
+    right: 0;
+    top: 30px;
+    text-decoration: none;
+    width: 20%;
+    text-align: center;
+
+    }
+
+.header-lien{
+    font-size: 20px;
+    margin-right: 5%;
+    text-decoration: none;
+    color: white;
+
+}
+
+.header-lien:hover{
+    text-decoration: underline 5px #F25D27;
+
+}
+
+
+
+.cont-info-serie{
+    margin-top: 20vh;
+    margin-left: 10%;
+    display: flex;
+}
+
+.img-info-serie{
+    border-radius: 20px;
+    width: 100%;
+}
+
+.info-info-serie{
+    margin-left: 10px;
+    margin-right: 210px;
+    font-size: 12px;
+    margin-top: 3px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+
+.avis-redac{
+    text-transform: uppercase;
+    padding-top: 30px;
+    padding-bottom: 20px;
+
+    background-color: #F23005;
+    color: white;
+    margin-top: 4.1vh;
+    text-align: center;
+    border-bottom: solid 20px #F25D27;
+}
+
+.contain-avis-redac{
+    position: relative;
+    background-color: #F25D27;
+
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 50px;
+
+}
+
+.avis-redac-cont{
+    font-size: 100%;
+    color: black;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-bottom: 5%;
+    padding-top:5%;
+    text-align: justify;
+}
+
+
+
+.container-episode-serie{
+    margin-top: 50px;
+    height: 50vh;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap:  5px;
+    margin-left: 15%;
+}
+
+.episode-serie {
+    display: flex;
+    height: 20vh;
+    width: 70%;
+    background-color: #17141d;
+    border-radius: 10px;
+    transition: 0.4s ease-out;
+    position: relative;
+    margin-right: 10%;
+
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 100px 100px -30px #000000;
+    transition: all 1s ease-in-out;     
+  }
+
+  .episode-serie:hover{
+    background-size: 110%;
+
+    filter: brightness(80%) ;
+  }
+
+
+
+
+.episode-film-vu{
+    color: white;
+    font-weight: 300;
+    position: absolute;
+    left: 33%;
+    top: 14.3vh;
+    
+    font-size: 0.4rem;
+    background-color: #263F73;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.episode-serie:hover .episode-film-vu{
+    opacity: 1;
+}
+
+.saison-episode-serie{
+    color: white;
+    margin-left: 16%;
+    margin-top: 2%;
+
+}
+
+
+
+.episode-serie-nb{
+    color: white;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+
+.episode-serie-titre{
+    color: white;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 35px;
+    font-size: 0.7rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+}
+
+.episode-serie:hover .episode-serie-nb{
+    opacity: 1;
+}
+.episode-serie:hover .episode-serie-titre{
+    opacity: 1;
+}
