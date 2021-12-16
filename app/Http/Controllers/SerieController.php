@@ -65,9 +65,22 @@ class SerieController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $request){
+        $this->validate($request, [
+            'content' => 'required',
+
+        ]);
+        $data = new Comment();
+        $data->content = $request->message;
+        $data->save();
+
+        DB::table('comments')->insert([
+            'content' => $data,
+            'validated'=> False,
+
+        ]);
+
+
     }
 
     /**
