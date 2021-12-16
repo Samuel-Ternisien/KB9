@@ -38,7 +38,7 @@ class SerieController extends Controller
 
             $seen = [];
             foreach ($id_episode as $episode_id) {
-                $seen[] = DB::table('seen')->select('date_seen')->where('episode_id', '=',  $episode_id)->get();
+                $seen[] = DB::table('seen')->select('user_id')->where('episode_id', '=',  $episode_id)->get();
             }
             echo $seen;
         }
