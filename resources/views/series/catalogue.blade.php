@@ -49,8 +49,8 @@
 
 </header>
 
-<form action="" method="POST" class="tout-search">
-    <input type="text" placeholder="Une idée de série ?" class="search" name="serie">
+<form action="/filtre/" method="POST" class="tout-search">
+    <input type="text" placeholder="Une idée de série ?" class="search" name="nom">
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
         @foreach($genres as $genre)
