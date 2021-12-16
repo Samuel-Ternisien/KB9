@@ -102,6 +102,13 @@
         margin-left: 20%;
     }
 
+    .tout-searchh{
+        display: flex;
+        margin-top: 15vh;
+
+        margin-left: 5%;
+    }
+
     .tout-search-select{
 
         margin-left: 20%;
