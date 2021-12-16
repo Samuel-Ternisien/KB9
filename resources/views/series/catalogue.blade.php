@@ -62,17 +62,17 @@
 </form>
 <div class="container-serie" >
     @if(!empty($series))
-            @foreach($series as $serie)
+            @for($i=0; $i < $series; $i++)
 
                 <a class="serie"  href="{{route("serie",['id'=>$serie->id])}}" style="background-image: url({{$serie->urlImage}}" alt="{{$serie->nom}}";>
 
                     <h3 class="film-titre">{{$serie->nom}}</h3>
                     <h3 class="film-langue">{{$serie->langue}}</h3>
                     <h3 class="film-genre">{{$serie->genre}}</h3>
-                    <h3 class="film-saison">{{$saison_nb}}</h3>
+                    <h3 class="film-saison">{{$serie->saison_nb}}</h3>
                     <p class="film-vu">Vous avez vu cette série</p>
                 </a>
-            @endforeach
+            @endfor
     @else
         <h3>aucune série</h3>
     @endif
