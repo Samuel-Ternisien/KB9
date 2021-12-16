@@ -64,12 +64,11 @@
     @if(!empty($series))
             @for($i=0; $i < $series; $i++)
 
-                <a class="serie"  href="{{route("serie",['id'=>$serie->id])}}" style="background-image: url({{$serie->urlImage}}" alt="{{$serie->nom}}";>
+                <a class="serie"  href="{{route("serie",['id'=>$series->id])}}" style="background-image: url({{$serie->urlImage}}" alt="{{$series->nom}}";>
 
-                    <h3 class="film-titre">{{$serie->nom}}</h3>
-                    <h3 class="film-langue">{{$serie->langue}}</h3>
-                    <h3 class="film-genre">{{$serie->genre}}</h3>
-                    <h3 class="film-saison">{{$serie->saison_nb}}</h3>
+                    <h3 class="film-titre">{{$series->nom}}</h3>
+                    <h3 class="film-langue">{{$series->langue}}</h3>
+                    <h3 class="film-genre">{{$series->genre}}</h3>
                     <p class="film-vu">Vous avez vu cette série</p>
                 </a>
             @endfor
