@@ -47,8 +47,8 @@
         <p>Genre : {{$serie->genre}}</p>
         <p>VO : {{$serie->langue}}</p>
         <p>Date de sortie : {{$serie->premiere}}</p>
-        <p>Nombre d'épisode : {{$episode_nb}}</p>
-        <p>Nombre de saison : {{$saison_nb}}</p>
+        <p>Nombre d'épisodes : {{$episode_nb}}</p>
+        <p>Nombre de saisons : {{$saison_nb}}</p>
         <p>Note : 8/10</p>
     </div>
 </div>
@@ -90,4 +90,12 @@
 </div>
 
 </body>
+<footer class="footer-accueil">
+    <div class="footer-accueil-cont" >
+        <p class="footer-accueil-droit">Tous droits réservés à KB9</p>
+
+        <a href="#"><img src="img/youtube.png" alt="" id="ytb"></a>
+    </div>
+
+</footer>
 </html>

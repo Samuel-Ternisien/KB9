@@ -34,7 +34,7 @@
 
 <footer class="footer-accueil">
     <div class="footer-accueil-cont" >
-        <p class="footer-accueil-droit">Tous droits réservé à KB9</p>
+        <p class="footer-accueil-droit">Tous droits réservés à KB9</p>
 
     </div>
 
