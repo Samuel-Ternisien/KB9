@@ -65,6 +65,26 @@ class SerieController extends Controller
         //
     }
 
+    public function seen($id_episode, $id) {
+        DB::table('seen')->insert([
+            'user_id' => $id,
+            'episode_id' => $id_episode,
+            'date_seen' => now()
+        ]);
+
+        $id_serie = DB::table('episodes')->select('serie_id')->where('id', '=', $id_episode)->get();
+
+        foreach ($id_serie as $v){
+            $res = $v->serie_id;
+        }
+
+        return redirect()->action(
+            [SerieController::class, 'serie'], ['id' => $res]
+        );
+
+
+    }
+
     public function serie($id) {
         $series = [];
         foreach (Serie::all() as $serie) {
@@ -72,7 +92,7 @@ class SerieController extends Controller
                 $series[] = $serie;
                 $episode_nb = DB::table('episodes')->where('serie_id', '=', $id)->count();
                 $saison_nb = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
-                $episode[] = DB::table('episodes')->select('nom')->where('serie_id', '=', $id)->get();
+                $episode = DB::table('episodes')->select('nom', 'saison', 'id')->where('serie_id', '=', $id)->get();
                 return view("series.details", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, "episode" => $episode]);
             }
         }
