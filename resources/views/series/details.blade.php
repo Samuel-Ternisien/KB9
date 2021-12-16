@@ -64,9 +64,9 @@
 @endif
 
 <h2 class="avis-redac">liste des épisodes</h2>
+<div class="container-episode-serie" >
 @for($i=1; $i < $saison_nb+1; $i++)
 <p class="saison-episode-serie">Saison : {{$i}}</p>
-<div class="container-episode-serie" >
 @foreach($episode as $episodes)
     @if($episodes->saison == $i)
 
@@ -78,9 +78,9 @@
 
     @endif
 @endforeach
-</div>
-@endfor
 
+@endfor
+</div>
 
 </body>
 </html>
