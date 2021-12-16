@@ -31,7 +31,9 @@
                             <li>
                                 <tr>
                                     {{$episodes->nom}}
-                                    <a href="{{ url('/seen/' . $episodes->id . '/' . Auth::user()->id) }}" class="btn btn-xs btn-info pull-right">Deja vu</a>
+                                    @if (Auth::user())
+                                        <a href="{{ url('/seen/' . $episodes->id . '/' . Auth::user()->id) }}" class="btn btn-xs btn-info pull-right">Deja vu</a>
+                                    @endif
                                 </tr>
                             </li>
                         @endif
