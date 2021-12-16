@@ -77,7 +77,7 @@
                 </a>
             @endfor
     @else
-        <h3>aucune série</h3>
+        <h3>Aucune série</h3>
     @endif
 </div>
 

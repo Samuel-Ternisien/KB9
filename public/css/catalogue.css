@@ -70,6 +70,19 @@
         text-decoration: underline 5px #F25D27;
     }
 
+    }
+    .header-lien{
+        font-size: 20px;
+        margin-right: 5%;
+        text-decoration: none;
+        color: white;
+    }
+    .header-lien-cat{
+        font-size: 20px;
+        margin-left: 5%;
+        text-decoration: none;
+        color: white;
+    }
 
 
     .ins-log{
@@ -252,13 +265,54 @@
     }
 
 
+    .film-titre{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+    }
+    .film-langue{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 30px;
+    }
+    .film-genre{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 45px;
+    }
+    .film-saison{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 60px;
+    }
+    .header-back{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background-image: url(../img/loki.jpg);
+        background-position: center;
+        background-size: cover;
+        filter: brightness(60%);
+        filter: grayscale(20%);
+        filter: opacity(80%) ;
+        z-index: -1;
 
 
 
-
-
-
-
+    .header-lien:hover{
+        text-decoration: underline 5px #F25D27;
+    }
+    .header-lien-cat:hover{
+        text-decoration: underline 5px #F25D27;
+    }
     .header-back-shadow{
         position: absolute;
         width: 100%;

@@ -139,14 +139,6 @@
         transition: 0.4s ease-out;
     }
 
-    .titre-film{
-        color: white;
-        font-weight: 300;
-        position: absolute;
-        left: 20px;
-        top: 15px;
-    }
-
 
     .footer-accueil{
         padding-top: 30px;

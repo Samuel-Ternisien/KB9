@@ -108,9 +108,9 @@ body{
 .avatar-img{
     position: absolute;
     border-radius: 100%;
-    margin-left: -10%;
+    margin-left: -0.5%;
     margin-top: -38vh;
-    width: 100%;
+    width: 75%;
 
 }
 

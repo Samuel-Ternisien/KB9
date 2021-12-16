@@ -40,7 +40,7 @@
 
 <div class="pos-avatar">
     <div class="contain-avatar">
-        <img src="img/avatar2.png" alt="" class="avatar-img">
+        <img src="../{{$user->avatar}}" alt="" class="avatar-img">
         <h3 class="nom-user">{{$user->name}}</h3>
         <h3 class="mail-user">Adresse mail : {{$user->email}}</h3>
         <form action="" class="lien-gp">
