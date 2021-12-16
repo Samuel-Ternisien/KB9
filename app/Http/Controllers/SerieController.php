@@ -66,8 +66,22 @@ class SerieController extends Controller
     }
 
     public function seen($id_episode, $id) {
+        DB::table('seen')->insert([
+            'user_id' => $id,
+            'episode_id' => $id_episode,
+            'date_seen' => now()
+        ]);
 
-        echo $id_episode,$id;
+        $id_serie = DB::table('episodes')->select('serie_id')->where('id', '=', $id_episode)->get();
+
+        foreach ($id_serie as $v){
+            $res = $v->serie_id;
+        }
+
+        return redirect()->action(
+            [SerieController::class, 'serie'], ['id' => $res]
+        );
+
 
     }
 
