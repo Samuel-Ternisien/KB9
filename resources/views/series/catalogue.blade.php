@@ -52,7 +52,7 @@
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
         @for($i = 0; $i < count($genre); $i++)
-            <option value="">{{$genres[$i]}}</option>
+            <option value="">{{$genre[$i]}}</option>
         @endfor
     </select>
     <input type="submit" class="submit-search" value="chercher">
