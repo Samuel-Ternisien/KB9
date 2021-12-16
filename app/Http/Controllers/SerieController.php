@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Episode;
+use App\Models\Serie;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use App\Models\Serie;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -43,7 +43,7 @@ class SerieController extends Controller
             $series[] = $serie;
             //$genre[] = DB::table('series')->select('genre')->where('id', '=', $id)->get();
         }
-        $genres = Serie::unique("genre")->get();
+        $genres = Serie::distinct("genre")->get();
         print_r($genres);
         // return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genres' => $genres]);
     }
