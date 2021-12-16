@@ -32,7 +32,6 @@
                 <a class="header-lien-cat" href="{{ route('register') }}">Register</a>
             @else
                 @if (Auth::user())
-                    <p class="header-lien-t" >Bonjour {{ Auth::user()->name }}</p>
                     <a class="header-lien-cat" href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
                 @endif
                 <a class="header-lien-cat" href="{{ route('logout') }}"
