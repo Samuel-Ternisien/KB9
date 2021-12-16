@@ -42,12 +42,17 @@
     <div class="contain-avatar">
         <img src="../{{$user->avatar}}" alt="" class="avatar-img">
         <h3 class="nom-user">{{$user->name}}</h3>
+        @if (Auth::user())
+            @if (Auth::user()->id==$user->id)
         <h3 class="mail-user">Adresse mail : {{$user->email}}</h3>
+
         <form action="" class="lien-gp">
             <input type="hidden" value="" name="">
             <!--Si tu veux envoyer des valeurs met tes variables dans le type hidden-->
             <input type="submit" value="modifier le profil" class="lien-aff-gp">
         </form>
+            @endif
+        @endif
     </div>
 </div>
 
