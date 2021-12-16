@@ -53,7 +53,7 @@
 <div class="container-serie" >
     @if(!empty($series))
             @foreach($series as $serie)
-                <a class="serie"  href="{{route("series",['id'=>$serie->id])}}" style="background-image: url({{$serie->urlImage}}" alt="{{$serie->nom}}";>
+                <a class="serie"  href="{{route("serie",['id'=>$serie->id])}}" style="background-image: url({{$serie->urlImage}}" alt="{{$serie->nom}}";>
 
                     <h3 class="film-titre">{{$serie->nom}}</h3>
                     <p class="film-vu">Vous avez vu cette série</p>
