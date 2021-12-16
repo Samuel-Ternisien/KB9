@@ -29,6 +29,21 @@ class SerieController extends Controller
         $this->series = Serie::all();
     }
 
+    public function serietoseen($id_serie){
+        if(Auth::user()) {
+
+            foreach (Episode::all() as $episode){
+                $id_episode = DB::table('episodes')->select('id')->where('serie_id', '=', $id_serie)->get();
+                $seen = DB::table('seen')->where('episode_id', '=', $id_episode);
+                if($seen->first()) {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+    }
+
     public function catalogue(){
 
         $series = [];
@@ -45,20 +60,7 @@ class SerieController extends Controller
         return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, "seen" => $seen]);
     }
 
-    public function serietoseen($id_serie){
-        if(Auth::user()) {
 
-            foreach (Episode::all() as $episode){
-                $id_episode = DB::table('episodes')->select('id')->where('serie_id', '=', $id_serie)->get();
-                $seen = DB::table('seen')->where('episode_id', '=', $id_episode);
-                if($seen->first()) {
-                    return true;
-                }
-            }
-            return false;
-
-        }
-    }
 
     public function index()
     {
