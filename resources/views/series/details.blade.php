@@ -22,15 +22,26 @@
             <tr>{!!  $serie->resume !!} </tr>
             <tr>Nombre d'épisodes : {{$episode_nb}}</tr>
             <tr>Nombre de saison : {{$saison_nb}}</tr>
-            <ul>
-            @foreach($episode as $episodes)
-                <li>
-                    <tr>
-                        Episode {{$episodes}}
-                    </tr>
-                </li>
-            </ul>
-            @endforeach
+            <br>
+            @for($i=1; $i < $saison_nb+1; $i++)
+                <tr>Saison : {{$i}}</tr>
+                <ul>
+                    @foreach($episode as $episodes)
+                        @if($episodes->saison == $i)
+                            <li>
+                                <tr>
+                                    {{$episodes->nom}}
+                                    @if (Auth::user())
+                                        <a href="{{ url('/seen/' . $episodes->id . '/' . Auth::user()->id) }}" class="btn btn-xs btn-info pull-right">Deja vu</a>
+                                    @endif
+                                </tr>
+                            </li>
+                        @endif
+                    @endforeach
+                </ul>
+
+            @endfor
+
         </li>
     @endforeach
     </ul>

@@ -17,10 +17,10 @@
     </div>
 
     <div class="header-top">
-        <a href="#" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
+        <a href="{{route("/")}}" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
-            <a href="#" class="header-lien" >Connexion</a>
-            <a href="#" class="header-lien" >Inscription</a>
+            <a href="{{route('login')}}" class="header-lien" >Connexion</a>
+            <a href="{{route('register')}}" class="header-lien" >Inscription</a>
         </div>
     </div>
 

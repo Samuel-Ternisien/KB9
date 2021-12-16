@@ -16,7 +16,7 @@
         Ma super appli
     </a>
 </header>
-<!-- Authentication Links -->
+<!-- Authentication Links
 <nav>
 @section('connection')
     @guest
@@ -37,6 +37,7 @@
         </form>
     @endguest
 </nav>
+-->
 <div id="main">
     @yield('content')
 </div>

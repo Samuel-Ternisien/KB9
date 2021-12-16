@@ -1,6 +1,29 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KB9</title>
+    <link rel="stylesheet" type="text/css" href="css/loginregister/register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header-back">
+    </div>
+    <div class="header-back-shadow">
+    </div>
 
-@section('content')
+    <div class="header-top">
+        <a href="{{route('/')}}" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
+        <div class="ins-log">
+            <a href="{{ route('login') }}" class="header-lien" >Connexion</a>
+            <a href="{{ route('register') }}" class="header-lien" >Inscription</a>
+        </div>
+    </div>
+
+</header>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -74,4 +97,11 @@
             </div>
         </div>
     </div>
-@endsection
+<footer class="footer-accueil">
+    <div class="footer-accueil-cont" >
+        <p class="footer-accueil-droit">Tout droits réservé à KB9</p>
+    </div>
+
+</footer>
+</body>
+</html>

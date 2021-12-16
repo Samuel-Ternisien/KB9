@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Serie;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class SerieController extends Controller
@@ -27,9 +28,17 @@ class SerieController extends Controller
         $this->series = Serie::all();
     }
 
-    public function acceuil(){
-        $series = Serie::all();
-        return view('series.acceuil',['series'=> $series]);
+    public function catalogue(){
+        $series = [];
+        $episode_nb = [];
+        $saison_nb = [];
+        foreach (Serie::all() as $serie) {
+            $id = $serie->id;
+            $episode_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->count();
+            $saison_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
+            $series[] = $serie;
+        }
+        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb]);
     }
 
     public function index()
@@ -65,6 +74,30 @@ class SerieController extends Controller
         //
     }
 
+    public function seen($id_episode, $id) {
+        if(Auth::user() && Auth::user()->id == $id) {
+            DB::table('seen')->insert([
+                'user_id' => $id,
+                'episode_id' => $id_episode,
+                'date_seen' => now()
+            ]);
+
+            $id_serie = DB::table('episodes')->select('serie_id')->where('id', '=', $id_episode)->get();
+
+            foreach ($id_serie as $v) {
+                $res = $v->serie_id;
+            }
+
+            return redirect()->action(
+                [SerieController::class, 'serie'], ['id' => $res]
+            );
+        } else {
+            return redirect()->route('login');
+
+        }
+
+    }
+
     public function serie($id) {
         $series = [];
         foreach (Serie::all() as $serie) {
@@ -72,12 +105,13 @@ class SerieController extends Controller
                 $series[] = $serie;
                 $episode_nb = DB::table('episodes')->where('serie_id', '=', $id)->count();
                 $saison_nb = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
-                $episode[] = DB::table('episodes')->select('nom')->where('serie_id', '=', $id)->get();
+                $episode = DB::table('episodes')->select('nom', 'saison', 'id')->where('serie_id', '=', $id)->get();
                 return view("series.details", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, "episode" => $episode]);
             }
         }
         return view("series.details", ['series' => $series]);
     }
+
     /**
      * Show the form for editing the specified resource.
      *
