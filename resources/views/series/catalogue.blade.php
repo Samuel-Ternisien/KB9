@@ -54,6 +54,7 @@
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
         @foreach($genre as $genres)
+
             <option value="{{$genres}}">{{$genres}}</option>
         @endforeach
     </select>
