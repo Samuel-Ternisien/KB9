@@ -247,7 +247,7 @@ position: absolute;
 @media screen and (max-width: 1000px) {
 
     .img-info-serie{
-        visibility: hidden;
+        width: 1vh;
     }
 
 }
