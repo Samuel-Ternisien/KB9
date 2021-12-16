@@ -55,7 +55,7 @@
 
 <form action="./series/filtre" method="GET" class="tout-searchh">
     <select name="genre" class="search">
-        <option value="">Vous voulez quel style de séries ?</option>
+        <option value="">Quel style de séries ?</option>
         @foreach($genres as $genre)
             <option value="{{$genre}}">{{$genre}}</option>
         @endforeach
