@@ -122,7 +122,7 @@ body{
     padding: 50px;
     color: white;
 }
-nom-count{
+.nom-count{
     align-items: center;
     font-size: 180%;
     margin-left: 0%;
