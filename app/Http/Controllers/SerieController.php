@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Episode;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use App\Models\Serie;
@@ -29,16 +30,34 @@ class SerieController extends Controller
     }
 
     public function catalogue(){
+
         $series = [];
         $episode_nb = [];
         $saison_nb = [];
+        $seen = [];
         foreach (Serie::all() as $serie) {
             $id = $serie->id;
             $episode_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->count();
             $saison_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
             $series[] = $serie;
+            $seen[] = $this->serietoseen($id);
         }
-        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb]);
+        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, "seen" => $seen]);
+    }
+
+    public function serietoseen($id_serie){
+        if(Auth::user()) {
+
+            foreach (Episode::all() as $episode){
+                $id_episode = DB::table('episodes')->select('id')->where('serie_id', '=', $id_serie)->get();
+                $seen = DB::table('seen')->where('episode_id', '=', $id_episode)->get();
+                if($seen) {
+                    return true;
+                }
+            }
+            return false;
+
+        }
     }
 
     public function index()
