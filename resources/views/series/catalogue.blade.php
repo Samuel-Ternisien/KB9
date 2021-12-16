@@ -54,7 +54,7 @@
     <select name="" class="selector-genre">
         <option value="">Vous voulez quel style de séries ?</option>
         @foreach($genres as $genre)
-            <option value="{{$genre}}">{{$genre}}</option>
+            <option value="{{$genre->genre}}">{{$genre->genre}}</option>
         @endforeach
     </select>
     <input type="submit" class="submit-search" value="chercher">
