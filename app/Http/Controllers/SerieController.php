@@ -43,7 +43,8 @@ class SerieController extends Controller
             $series[] = $serie;
             //$genre[] = DB::table('series')->select('genre')->where('id', '=', $id)->get();
         }
-        $genres = Serie::distinct("genre")->unique('genre')->get();
+        $genres = Serie::distinct("genre")->get();
+        $genres = array_unique($genres, 'unique');
         return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genres' => $genres]);
     }
 
