@@ -1,3 +1,11 @@
+.titre-film {
+    color: white;
+    font-weight: 300;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    font-size: 0.7rem;
+}
 @media screen and (min-width: 800px) {
 
     body{
@@ -322,15 +330,6 @@
         position: relative;
         left: 50px;
         transition: 0.4s ease-out;
-    }
-
-    .titre-film {
-        color: white;
-        font-weight: 300;
-        position: absolute;
-        left: 20px;
-        top: 15px;
-        font-size: 0.7rem;
     }
 
 
