@@ -55,7 +55,7 @@
 
 <form action="./series/filtre" method="GET" class="tout-searchh">
     <select name="genre" class="search">
-        <option value="">Quel style de séries ?</option>
+        <option value="">Quel style de série ?</option>
         @foreach($genres as $genre)
             <option value="{{$genre}}">{{$genre}}</option>
         @endforeach
@@ -83,4 +83,12 @@
 
 
 </body>
+<footer class="footer-accueil">
+    <div class="footer-accueil-cont" >
+        <p class="footer-accueil-droit">Tous droits réservés à KB9</p>
+
+        <a href="#"><img src="img/youtube.png" alt="" id="ytb"></a>
+    </div>
+
+</footer>
 </html>
