@@ -33,9 +33,9 @@
             @else
                 @if (Auth::user())
                     Bonjour {{ Auth::user()->name }}
-                    <a href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
+                    <a class="header-lien-cat" href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
                 @endif
-                <a href="{{ route('logout') }}"
+                <a class="header-lien-cat" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                     Logout
