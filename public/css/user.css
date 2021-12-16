@@ -109,7 +109,7 @@ body{
     position: absolute;
     border-radius: 100%;
     margin-left: -0.5%;
-    margin-top: -38vh;
+    margin-top: -46vh;
     width: 75%;
 
 }
@@ -124,9 +124,9 @@ body{
 }
 .nom-count{
     align-items: center;
-    font-size: 180%;
-    margin-left: 0%;
-    margin-top: 55vh;
+    font-size: 100%;
+    margin-left: -10%;
+    margin-top: -28vh;
     padding: 50px;
     color: white;
 }
