@@ -102,6 +102,13 @@
         margin-left: 20%;
     }
 
+    .tout-search-select{
+        display: flex;
+        margin-top: 20vh;
+
+        margin-left: 20%;
+    }
+
     .search{
         padding-top: 2vh;
         padding-bottom: 2vh;
