@@ -69,12 +69,6 @@ class SerieController extends Controller
 
         echo $id_episode,$id;
 
-        DB::table('seen')->insert([
-            'user_id' => $id,
-            'episode_id' => $id_episode,
-            'date_seen' => now()
-        ]);
-
     }
 
     public function serie($id) {
