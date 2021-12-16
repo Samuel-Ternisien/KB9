@@ -130,7 +130,6 @@
         filter: brightness(80%) ;
     }
 
-
     .film-titre{
         color: white;
         font-weight: 300;
@@ -139,6 +138,31 @@
         top: 15px;
         font-size: 0.7rem;
     }
+    .film-langue{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 30px;
+        font-size: 0.7rem;
+    }
+    .film-genre{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 45px;
+        font-size: 0.7rem;
+    }
+    .film-saison{
+        color: white;
+        font-weight: 300;
+        position: absolute;
+        left: 20px;
+        top: 60px;
+        font-size: 0.7rem;
+    }
+
 
 
     .film-vu{
