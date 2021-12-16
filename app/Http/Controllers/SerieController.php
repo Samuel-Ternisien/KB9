@@ -34,16 +34,15 @@ class SerieController extends Controller
         $series = [];
         $episode_nb = [];
         $saison_nb = [];
-        $genre = [];
 
         foreach (Serie::all() as $serie) {
             $id = $serie->id;
             $episode_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->count();
             $saison_nb[] = DB::table('episodes')->where('serie_id', '=', $id)->max('saison');
             $series[] = $serie;
-            $genre[] = DB::table('series')->select('genre')->where('id', '=', $id)->get();
+            $genre = DB::table('series')->select('genre')->where('id', '=', $id)->get();
         }
-        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genre' => array_unique($genre)]);
+        return view("series.catalogue", ['series' => $series, "episode_nb" => $episode_nb, "saison_nb" => $saison_nb, 'genre' => $genre]);
     }
 
 
