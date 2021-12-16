@@ -19,19 +19,29 @@
 </head>
 <body>
 <header>
-    <div class="header-back">
-    </div>
-    <div class="header-back-shadow">
-    </div>
-
     <div class="header-top">
-        <div class="header-nav">
-            <a href="{{route('catalogue')}}" class="header-lien" >Catalogue</a>
+        <div class="header-nav-g">
+            <a href="{{route('catalogue')}}" class="header-lien-cat" >Catalogue</a>
         </div>
-        <a href="{{route('/')}}" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
+        <a href="#" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
-            <a href="{{route('login')}}" class="header-lien" >Connexion</a>
-            <a href="{{route('register')}}" class="header-lien" >Inscription</a>
+            @guest
+                <a class="header-lien" href="{{ route('login') }}">Login</a>
+                <a class="header-lien" href="{{ route('register') }}">Register</a>
+            @else
+                @if (Auth::user())
+                    Bonjour {{ Auth::user()->name }}
+                    <a href="{{route("profile",['id'=>Auth::user()->id])}}">Profil</a>
+                @endif
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            @endguest
         </div>
     </div>
 
