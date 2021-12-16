@@ -56,6 +56,7 @@
                 <a class="serie"  href="{{route("serie",['id'=>$serie->id])}}" style="background-image: url({{$serie->urlImage}}" alt="{{$serie->nom}}";>
 
                     <h3 class="film-titre">{{$serie->nom}}</h3>
+                    <h3 class="film-titre">{{$serie->langue}}</h3>
                     <p class="film-vu">Vous avez vu cette série</p>
                 </a>
             @endforeach
