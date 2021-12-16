@@ -247,8 +247,8 @@ position: absolute;
 @media screen and (max-width: 1000px) {
 
     .img-info-serie{
-        width: 3em;
-        height: 3em;
+        width: 20%;
+        height: 10%;
     }
 
 }
