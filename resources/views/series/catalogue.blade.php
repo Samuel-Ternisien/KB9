@@ -83,12 +83,5 @@
 
 
 </body>
-<footer class="footer-accueil">
-    <div class="footer-accueil-cont" >
-        <p class="footer-accueil-droit">Tous droits réservés à KB9</p>
 
-        <a href="#"><img src="img/youtube.png" alt="" id="ytb"></a>
-    </div>
-
-</footer>
 </html>

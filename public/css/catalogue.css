@@ -69,6 +69,26 @@
     .header-lien-cat:hover{
         text-decoration: underline 5px #F25D27;
     }
+    .footer-accueil{
+        padding-top: 30px;
+        padding-bottom: 20px;
+
+        background-color: #1c2e55;
+        color: white;
+        margin-top: 87.4vh;
+
+    }
+
+
+    .footer-accueil-droit{
+        margin-left: 20px;
+    }
+
+    .footer-accueil-cont{
+        top: 120vh;
+        display: flex;
+        margin-left: 10%;
+    }
 
     }
     .header-lien{
