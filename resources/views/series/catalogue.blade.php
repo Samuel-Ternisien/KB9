@@ -28,8 +28,8 @@
         <a href="{{route("/")}}" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
             @guest
-                <a class="header-lien" href="{{ route('login') }}">Login</a>
-                <a class="header-lien" href="{{ route('register') }}">Register</a>
+                <a class="header-lien-cat" href="{{ route('login') }}">Login</a>
+                <a class="header-lien-cat" href="{{ route('register') }}">Register</a>
             @else
                 @if (Auth::user())
                     Bonjour {{ Auth::user()->name }}
