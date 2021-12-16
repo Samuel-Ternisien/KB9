@@ -62,7 +62,7 @@
 </form>
 <div class="container-serie" >
     @if(!empty($series))
-            @for($i=0; $i < $series; $i++)
+            @for($i=0; $i < count($series); $i++)
                 <p>{{$i}}</p>
             @endfor
     @else
