@@ -23,7 +23,7 @@
     <div class="header-back-shadow"></div>
     <div class="header-top">
         <div class="header-nav-g">
-            <a href="{{route('catalogue')}}" class="header-lien-cat" >Catalogue</a>
+            <a href="{{route('/')}}" class="header-lien-cat" >Accueil</a>
         </div>
         <a href="{{route("/")}}" id="lien-logo"><img src="img/KB9.svg" alt="" id="logo"></a>
         <div class="ins-log">
