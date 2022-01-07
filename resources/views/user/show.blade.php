@@ -42,7 +42,7 @@
     <div class="contain-avatar">
         <img style="width: 200px; height: 200px;" src="../{{$user->avatar}}" alt="" class="avatar-img">
         <h3 class="nom-user">{{$user->name}}</h3>
-        <h3 class="nom-count">Nombre d'heure passé à regarder:{{round($count/60, 2)}} H</h3>
+        <h3 class="nom-count">Temps de visionnage:{{round($count/60, 2)}} H</h3>
         @if (Auth::user())
             @if (Auth::user()->id==$user->id)
         <h3 class="mail-user">Adresse mail : {{$user->email}}</h3>

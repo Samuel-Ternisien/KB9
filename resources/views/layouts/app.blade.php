@@ -11,11 +11,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-<header>
-    <a href="{{ url('/') }}">
-        Ma super appli
-    </a>
-</header>
+
 <!-- Authentication Links
 <nav>
 @section('connection')
